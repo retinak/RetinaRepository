@@ -1,0 +1,22 @@
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.ApplicationService\obj\Debug\SASSMMS.ApplicationService.csprojResolveAssemblyReference.cache
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.ApplicationService\bin\Debug\SASSMMS.ApplicationService.dll
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.ApplicationService\bin\Debug\SASSMMS.ApplicationService.pdb
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.ApplicationService\bin\Debug\SASSMMS.Domain.dll
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.ApplicationService\bin\Debug\SASSMMS.Repository.dll
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.ApplicationService\bin\Debug\EntityFramework.dll
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.ApplicationService\bin\Debug\SASSMMS.Domain.pdb
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.ApplicationService\bin\Debug\SASSMMS.Repository.pdb
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.ApplicationService\bin\Debug\EntityFramework.xml
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.ApplicationService\obj\Debug\SASSMMS.ApplicationService.dll
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.ApplicationService\obj\Debug\SASSMMS.ApplicationService.pdb
+E:\SASSMMS\SASSMMS.ApplicationService\bin\Debug\SASSMMS.ApplicationService.dll
+E:\SASSMMS\SASSMMS.ApplicationService\bin\Debug\SASSMMS.ApplicationService.pdb
+E:\SASSMMS\SASSMMS.ApplicationService\bin\Debug\SASSMMS.Domain.dll
+E:\SASSMMS\SASSMMS.ApplicationService\bin\Debug\SASSMMS.Repository.dll
+E:\SASSMMS\SASSMMS.ApplicationService\bin\Debug\EntityFramework.dll
+E:\SASSMMS\SASSMMS.ApplicationService\bin\Debug\SASSMMS.Domain.pdb
+E:\SASSMMS\SASSMMS.ApplicationService\bin\Debug\SASSMMS.Repository.pdb
+E:\SASSMMS\SASSMMS.ApplicationService\bin\Debug\EntityFramework.xml
+E:\SASSMMS\SASSMMS.ApplicationService\obj\Debug\SASSMMS.ApplicationService.csprojResolveAssemblyReference.cache
+E:\SASSMMS\SASSMMS.ApplicationService\obj\Debug\SASSMMS.ApplicationService.dll
+E:\SASSMMS\SASSMMS.ApplicationService\obj\Debug\SASSMMS.ApplicationService.pdb

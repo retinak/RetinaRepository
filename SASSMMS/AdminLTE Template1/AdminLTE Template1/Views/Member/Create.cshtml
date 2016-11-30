@@ -1,0 +1,218 @@
+﻿@model SSWebUI.Models.MemberModel
+
+@{
+    ViewBag.Title = "Member Profile";
+}
+
+@using (Html.BeginForm())
+{ <hr />
+    <div class="row">
+        <div class="form-horizontal">
+            <div class="col-xs-12 col-md-5">
+
+                <div class="box box box-default">
+
+
+                    <h4> Basic info </h4>
+                    <div class="box box-body">
+
+                        <div class="form-group">
+                            <label class="control-label col-md-4">Attendance Number</label>
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.AttendanceNmumber, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.AttendanceNmumber, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-4">First Name</label>
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-4">Middle Name</label>
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.FatherName, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.FatherName, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-4">Last Name</label>
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.GrandfatherName, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.GrandfatherName, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-4">Date of Birth</label>
+                            <div class="input-group date col-md-8">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-calendar"></i>
+                                </div>
+                                <input type="text" class="form-control pull-right datepicker">
+                            </div>
+
+                            @*<div class="col-md-8">
+                                @Html.EditorFor(model => model.DateOfBirth, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.DateOfBirth, "", new { @class = "text-danger" })
+                            </div>*@
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-4">Gender</label>
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.Gender, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-4">Category</label>
+                            <div class="col-md-8">
+                                <select class="form-control" style="width:100%">
+
+                                    <option selected="selected">Alabama</option>
+                                    <option>Alaska</option>
+                                    <option disabled="disabled">California (disabled)</option>
+                                    <option>Delaware</option>
+                                    <option>Tennessee</option>
+                                    <option>Texas</option>
+                                    <option>Washington</option>
+                                </select>
+
+                                @*@Html.EditorFor(model => model.CategoryLevelId, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.CategoryLevelId, "", new { @class = "text-danger" })*@
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+        <div class="col-xs-12 col-md-7">
+            <div class="box box box-default">
+               
+                    <div class="box-header">
+                        <h4 class="box-title"> Addtional Detail </h4>
+                    </div>
+                    <div class="box box-body">
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            @Html.HiddenFor(model => model.MemberId, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.HiddenFor(model => model.MemberId, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.MemberId, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="control-label col-md-4">Parent </label>
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.ParentId, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.ParentId, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-4">Current Status</label>
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.CurrentStatus, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.CurrentStatus, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-4">Organization </label>
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.Company, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Company, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-4">School</label>
+
+                            <div class="col-md-8">
+                                <select class="form-control" style="width: 100%;">
+
+                                   
+                                        <option value="CA">California</option>
+                                        <option value="NV">Nevada</option>
+                                        <option value="OR">Oregon</option>
+                                        <option value="WA">Washington</option>
+                           
+
+
+                                </select>
+                            </div>
+                            @*<div class="col-md-8">
+                                    @Html.EditorFor(model => model.SchoolId, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.SchoolId, "", new { @class = "text-danger" })
+                                </div>*@
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-4">Department</label>
+                            <div class="col-md-8">
+
+                                <select class="form-control" style="width: 100%;">
+                                    
+                                        <option value="AZ">Arizona</option>
+                                        <option value="CO">Colorado</option>
+                                        <option value="ID">Idaho</option>
+                                        <option value="MT">Montana</option>
+                                        <option value="NE">Nebraska</option>
+                                        <option value="NM">New Mexico</option>
+                                        <option value="ND">North Dakota</option>
+                                        <option value="UT">Utah</option>
+                                        <option value="WY">Wyoming</option>
+                                 
+                                    </select>
+                                    @*@Html.EditorFor(model => model.DivisionId, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.DivisionId, "", new { @class = "text-danger" })*@
+</div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="control-label col-md-4">Ocupation </label>
+                            <div class="col-md-8">
+                                <select class="form-control"style="width :100%">
+                                    <option>Alaska</option>
+                                    <option>California</option>
+                                    <option>Delaware</option>
+                                    <option>Tennessee</option>
+                                    <option>Texas</option>
+                                    <option>Washington</option>
+                                </select>
+
+                                @*@Html.EditorFor(model => model.Occupation, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Occupation, "", new { @class = "text-danger" })*@
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-offset-4 col-md-8">
+                                <input type="submit" value="Create" class="btn btn-default btn btn-primary" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-2"></div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+   
+}
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+

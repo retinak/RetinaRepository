@@ -1,0 +1,22 @@
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.Repository\obj\Debug\SASSMMS.Repository.csprojResolveAssemblyReference.cache
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.Repository\bin\Debug\SASSMMS.Repository.dll
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.Repository\bin\Debug\SASSMMS.Repository.pdb
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.Repository\bin\Debug\EntityFramework.dll
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.Repository\bin\Debug\EntityFramework.SqlServer.dll
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.Repository\bin\Debug\SASSMMS.Domain.dll
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.Repository\bin\Debug\SASSMMS.Domain.pdb
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.Repository\bin\Debug\EntityFramework.xml
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.Repository\bin\Debug\EntityFramework.SqlServer.xml
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.Repository\obj\Debug\SASSMMS.Repository.dll
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.Repository\obj\Debug\SASSMMS.Repository.pdb
+E:\SASSMMS\SASSMMS.Repository\bin\Debug\SASSMMS.Repository.dll
+E:\SASSMMS\SASSMMS.Repository\bin\Debug\SASSMMS.Repository.pdb
+E:\SASSMMS\SASSMMS.Repository\bin\Debug\EntityFramework.dll
+E:\SASSMMS\SASSMMS.Repository\bin\Debug\EntityFramework.SqlServer.dll
+E:\SASSMMS\SASSMMS.Repository\bin\Debug\SASSMMS.Domain.dll
+E:\SASSMMS\SASSMMS.Repository\bin\Debug\SASSMMS.Domain.pdb
+E:\SASSMMS\SASSMMS.Repository\bin\Debug\EntityFramework.xml
+E:\SASSMMS\SASSMMS.Repository\bin\Debug\EntityFramework.SqlServer.xml
+E:\SASSMMS\SASSMMS.Repository\obj\Debug\SASSMMS.Repository.csprojResolveAssemblyReference.cache
+E:\SASSMMS\SASSMMS.Repository\obj\Debug\SASSMMS.Repository.dll
+E:\SASSMMS\SASSMMS.Repository\obj\Debug\SASSMMS.Repository.pdb

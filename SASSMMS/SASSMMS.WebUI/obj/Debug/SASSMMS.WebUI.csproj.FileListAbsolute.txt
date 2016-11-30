@@ -1,0 +1,172 @@
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\obj\Debug\SASSMMS.WebUI.csprojResolveAssemblyReference.cache
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\ApplicationInsights.config
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\roslyn\csc.exe
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\roslyn\System.Collections.Immutable.dll
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\roslyn\System.Reflection.Metadata.dll
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\roslyn\vbc.exe
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\roslyn\VBCSCompiler.exe
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\roslyn\VBCSCompiler.exe.config
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\SASSMMS.WebUI.dll.config
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\SASSMMS.WebUI.dll
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\SASSMMS.WebUI.pdb
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\Antlr3.Runtime.dll
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\AspNet.ScriptManager.bootstrap.dll
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\AspNet.ScriptManager.jQuery.dll
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\EntityFramework.dll
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\EntityFramework.SqlServer.dll
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\Microsoft.AI.Agent.Intercept.dll
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\Microsoft.AI.DependencyCollector.dll
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\Microsoft.AI.Web.dll
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\Microsoft.AI.WindowsServer.dll
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\Microsoft.ApplicationInsights.dll
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\Microsoft.AspNet.FriendlyUrls.dll
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\Microsoft.Owin.dll
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\Microsoft.Owin.Security.dll
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\Microsoft.Owin.Security.Google.dll
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\Microsoft.ScriptManager.MSAjax.dll
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\Microsoft.ScriptManager.WebForms.dll
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\Microsoft.Web.Infrastructure.dll
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\Newtonsoft.Json.dll
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\Owin.dll
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\SASSMMS.ApplicationService.dll
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\SASSMMS.Domain.dll
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\SASSMMS.Repository.dll
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\System.Web.Optimization.dll
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\System.Web.Providers.dll
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\WebGrease.dll
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\SASSMMS.ApplicationService.pdb
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\SASSMMS.Domain.pdb
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\SASSMMS.Repository.pdb
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\Microsoft.AI.DependencyCollector.xml
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\Microsoft.AI.Web.xml
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\Microsoft.AI.WindowsServer.xml
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\Microsoft.ApplicationInsights.xml
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\System.Web.Optimization.xml
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\Antlr3.Runtime.pdb
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\Newtonsoft.Json.xml
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\Microsoft.AspNet.FriendlyUrls.xml
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\EntityFramework.xml
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\EntityFramework.SqlServer.xml
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\System.Web.Providers.xml
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\Microsoft.Owin.xml
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\Microsoft.Owin.Security.xml
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\Microsoft.Owin.Security.Google.xml
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\obj\Debug\SASSMMS.WebUI.dll
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\obj\Debug\SASSMMS.WebUI.pdb
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\Telerik.Web.UI.dll
+D:\Amanuel Sunday School\SASSMMS\SASSMMS.WebUI\bin\Telerik.Web.UI.Skins.dll
+E:\SASSMMS\SASSMMS.WebUI\bin\ApplicationInsights.config
+E:\SASSMMS\SASSMMS.WebUI\bin\roslyn\csc.exe
+E:\SASSMMS\SASSMMS.WebUI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\SASSMMS\SASSMMS.WebUI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\SASSMMS\SASSMMS.WebUI\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\SASSMMS\SASSMMS.WebUI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\SASSMMS\SASSMMS.WebUI\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\SASSMMS\SASSMMS.WebUI\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\SASSMMS\SASSMMS.WebUI\bin\roslyn\System.Collections.Immutable.dll
+E:\SASSMMS\SASSMMS.WebUI\bin\roslyn\System.Reflection.Metadata.dll
+E:\SASSMMS\SASSMMS.WebUI\bin\roslyn\vbc.exe
+E:\SASSMMS\SASSMMS.WebUI\bin\roslyn\VBCSCompiler.exe
+E:\SASSMMS\SASSMMS.WebUI\bin\roslyn\VBCSCompiler.exe.config
+E:\SASSMMS\SASSMMS.WebUI\bin\SASSMMS.WebUI.dll.config
+E:\SASSMMS\SASSMMS.WebUI\bin\SASSMMS.WebUI.dll
+E:\SASSMMS\SASSMMS.WebUI\bin\SASSMMS.WebUI.pdb
+E:\SASSMMS\SASSMMS.WebUI\bin\Antlr3.Runtime.dll
+E:\SASSMMS\SASSMMS.WebUI\bin\AspNet.ScriptManager.bootstrap.dll
+E:\SASSMMS\SASSMMS.WebUI\bin\AspNet.ScriptManager.jQuery.dll
+E:\SASSMMS\SASSMMS.WebUI\bin\EntityFramework.dll
+E:\SASSMMS\SASSMMS.WebUI\bin\EntityFramework.SqlServer.dll
+E:\SASSMMS\SASSMMS.WebUI\bin\Microsoft.AI.Agent.Intercept.dll
+E:\SASSMMS\SASSMMS.WebUI\bin\Microsoft.AI.DependencyCollector.dll
+E:\SASSMMS\SASSMMS.WebUI\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\SASSMMS\SASSMMS.WebUI\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\SASSMMS\SASSMMS.WebUI\bin\Microsoft.AI.Web.dll
+E:\SASSMMS\SASSMMS.WebUI\bin\Microsoft.AI.WindowsServer.dll
+E:\SASSMMS\SASSMMS.WebUI\bin\Microsoft.ApplicationInsights.dll
+E:\SASSMMS\SASSMMS.WebUI\bin\Microsoft.AspNet.FriendlyUrls.dll
+E:\SASSMMS\SASSMMS.WebUI\bin\Microsoft.AspNet.Identity.Core.dll
+E:\SASSMMS\SASSMMS.WebUI\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\SASSMMS\SASSMMS.WebUI\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\SASSMMS\SASSMMS.WebUI\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+E:\SASSMMS\SASSMMS.WebUI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\SASSMMS\SASSMMS.WebUI\bin\Microsoft.Owin.dll
+E:\SASSMMS\SASSMMS.WebUI\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\SASSMMS\SASSMMS.WebUI\bin\Microsoft.Owin.Security.Cookies.dll
+E:\SASSMMS\SASSMMS.WebUI\bin\Microsoft.Owin.Security.dll
+E:\SASSMMS\SASSMMS.WebUI\bin\Microsoft.Owin.Security.Facebook.dll
+E:\SASSMMS\SASSMMS.WebUI\bin\Microsoft.Owin.Security.Google.dll
+E:\SASSMMS\SASSMMS.WebUI\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\SASSMMS\SASSMMS.WebUI\bin\Microsoft.Owin.Security.OAuth.dll
+E:\SASSMMS\SASSMMS.WebUI\bin\Microsoft.Owin.Security.Twitter.dll
+E:\SASSMMS\SASSMMS.WebUI\bin\Microsoft.ScriptManager.MSAjax.dll
+E:\SASSMMS\SASSMMS.WebUI\bin\Microsoft.ScriptManager.WebForms.dll
+E:\SASSMMS\SASSMMS.WebUI\bin\Microsoft.Web.Infrastructure.dll
+E:\SASSMMS\SASSMMS.WebUI\bin\Newtonsoft.Json.dll
+E:\SASSMMS\SASSMMS.WebUI\bin\Owin.dll
+E:\SASSMMS\SASSMMS.WebUI\bin\SASSMMS.ApplicationService.dll
+E:\SASSMMS\SASSMMS.WebUI\bin\SASSMMS.Domain.dll
+E:\SASSMMS\SASSMMS.WebUI\bin\SASSMMS.Repository.dll
+E:\SASSMMS\SASSMMS.WebUI\bin\System.Web.Optimization.dll
+E:\SASSMMS\SASSMMS.WebUI\bin\System.Web.Providers.dll
+E:\SASSMMS\SASSMMS.WebUI\bin\WebGrease.dll
+E:\SASSMMS\SASSMMS.WebUI\bin\SASSMMS.ApplicationService.pdb
+E:\SASSMMS\SASSMMS.WebUI\bin\SASSMMS.Domain.pdb
+E:\SASSMMS\SASSMMS.WebUI\bin\SASSMMS.Repository.pdb
+E:\SASSMMS\SASSMMS.WebUI\bin\Microsoft.AI.DependencyCollector.xml
+E:\SASSMMS\SASSMMS.WebUI\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\SASSMMS\SASSMMS.WebUI\bin\Microsoft.AI.Web.xml
+E:\SASSMMS\SASSMMS.WebUI\bin\Microsoft.AI.WindowsServer.xml
+E:\SASSMMS\SASSMMS.WebUI\bin\Microsoft.ApplicationInsights.xml
+E:\SASSMMS\SASSMMS.WebUI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\SASSMMS\SASSMMS.WebUI\bin\System.Web.Optimization.xml
+E:\SASSMMS\SASSMMS.WebUI\bin\Antlr3.Runtime.pdb
+E:\SASSMMS\SASSMMS.WebUI\bin\Newtonsoft.Json.xml
+E:\SASSMMS\SASSMMS.WebUI\bin\Microsoft.AspNet.FriendlyUrls.xml
+E:\SASSMMS\SASSMMS.WebUI\bin\EntityFramework.xml
+E:\SASSMMS\SASSMMS.WebUI\bin\EntityFramework.SqlServer.xml
+E:\SASSMMS\SASSMMS.WebUI\bin\Microsoft.AspNet.Identity.Core.xml
+E:\SASSMMS\SASSMMS.WebUI\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\SASSMMS\SASSMMS.WebUI\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\SASSMMS\SASSMMS.WebUI\bin\System.Web.Providers.xml
+E:\SASSMMS\SASSMMS.WebUI\bin\Microsoft.Owin.xml
+E:\SASSMMS\SASSMMS.WebUI\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\SASSMMS\SASSMMS.WebUI\bin\Microsoft.Owin.Security.xml
+E:\SASSMMS\SASSMMS.WebUI\bin\Microsoft.Owin.Security.Facebook.xml
+E:\SASSMMS\SASSMMS.WebUI\bin\Microsoft.Owin.Security.Cookies.xml
+E:\SASSMMS\SASSMMS.WebUI\bin\Microsoft.Owin.Security.Google.xml
+E:\SASSMMS\SASSMMS.WebUI\bin\Microsoft.Owin.Security.Twitter.xml
+E:\SASSMMS\SASSMMS.WebUI\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\SASSMMS\SASSMMS.WebUI\bin\Microsoft.Owin.Security.OAuth.xml
+E:\SASSMMS\SASSMMS.WebUI\obj\Debug\SASSMMS.WebUI.csprojResolveAssemblyReference.cache
+E:\SASSMMS\SASSMMS.WebUI\obj\Debug\SASSMMS.WebUI.dll
+E:\SASSMMS\SASSMMS.WebUI\obj\Debug\SASSMMS.WebUI.pdb

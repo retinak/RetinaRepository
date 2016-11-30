@@ -1,0 +1,105 @@
+﻿@model IEnumerable<SASSMMS.Domain.Entities.Member>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Division.DepartmentName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Parent.ParentCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.School.SchoolName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AttendanceNmumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CurrentStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Company)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CategoryLevelId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FatherName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GrandfatherName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfBirth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Occupation)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Division.DepartmentName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Parent.ParentCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.School.SchoolName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AttendanceNmumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CurrentStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Company)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CategoryLevelId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FatherName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GrandfatherName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateOfBirth)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Occupation)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MemberId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MemberId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MemberId })
+        </td>
+    </tr>
+}
+
+</table>

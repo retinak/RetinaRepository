@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="e088f17f-d830-4c86-a6e7-49c4984c7f27" name="UMLClassDiagram1" linkedPackageId="2169c24c-6331-4a5f-bcdc-7054dfa5c745" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="7212305b-9cee-4368-b810-d33a2e98c816" name="Member " isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="7ea5eefb-e298-4226-abd4-93bbab2e8e54" />
+        <ownedAttributesInternal>
+          <property Id="85d6c9fd-ab14-4750-8775-eca849de6132" name="Attribute1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="b1c559cd-fc89-4a81-9456-27aef8f04e4f" />
+          </property>
+          <property Id="0b7a8873-3f5c-4fc0-a239-b9e8f454491c" name="Attribute2" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="b7cab215-ef52-4d59-819a-47976b411bd1" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="cba70f34-d433-49a0-a97a-0e03f48a3f03" name="Save" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="51fc45fb-fda7-47b3-90c5-c349b244feb1" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="b8fc610c-e51e-4642-8ebc-aaa6855a84fe" name="Address" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="4f96fa4b-e455-47cb-9f56-2f2d29a06da9" />
+        <ownedAttributesInternal>
+          <property Id="9ee8abb6-1d07-475a-84eb-31c2a84feb96" name="Attribute1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="14f5dc20-a700-4080-ad56-f7bc00460f6a" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="2169c24c-6331-4a5f-bcdc-7054dfa5c745" name="ModelingSASSMS">
+    <elementDefinition Id="481c180c-c273-47ff-825a-59b03924c1a2" />
+    <profileInstances>
+      <packageHasProfileInstances Id="e02319b6-7c3a-4c40-88e4-1e147e1a373b">
+        <profileInstance Id="ba052492-9337-445c-898e-42b316d6aa8f" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="6cb9df43-bd3a-40c3-adb6-04ceed92f672">
+        <profileInstance Id="7ff3dc4d-bb84-4aec-a944-952738073a57" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</logicalClassDesignerModel>
