@@ -16,7 +16,7 @@ namespace SASSMMS.Domain.Entities
         public Guid DivisionId { get; set; }
 
         //public Guid SecretaryId { get; set; }
-
+        
         public virtual Division Division { get; set; }
     }
 }

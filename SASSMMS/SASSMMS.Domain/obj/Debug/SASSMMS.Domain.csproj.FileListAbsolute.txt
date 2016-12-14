@@ -10,6 +10,6 @@ E:\SASSMMS\SASSMMS.Domain\obj\Debug\SASSMMS.Domain.pdb
 E:\SASSMMS\SASSMMS.Domain\obj\Debug\SASSMMS.Domain.csprojResolveAssemblyReference.cache
 E:\MyRepo\SASSMMS\SASSMMS.Domain\bin\Debug\SASSMMS.Domain.dll
 E:\MyRepo\SASSMMS\SASSMMS.Domain\bin\Debug\SASSMMS.Domain.pdb
-E:\MyRepo\SASSMMS\SASSMMS.Domain\obj\Debug\SASSMMS.Domain.csprojResolveAssemblyReference.cache
 E:\MyRepo\SASSMMS\SASSMMS.Domain\obj\Debug\SASSMMS.Domain.dll
 E:\MyRepo\SASSMMS\SASSMMS.Domain\obj\Debug\SASSMMS.Domain.pdb
+E:\MyRepo\SASSMMS\SASSMMS.Domain\obj\Debug\SASSMMS.Domain.csprojResolveAssemblyReference.cache
