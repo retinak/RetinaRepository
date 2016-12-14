@@ -49,7 +49,7 @@ namespace SASSMMS.Repository
         {
             return dbSet.ToList();
         }
-        public virtual TEntity GetByID(object id)
+        public virtual TEntity GetById(object id)
         {
             return dbSet.Find(id);
         }

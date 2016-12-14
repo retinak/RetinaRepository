@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using SASSMMS.ApplicationService.Services.Interfaces;
@@ -17,21 +18,42 @@ namespace SASSMMS.ApplicationService.Services.Implementations
         {
             unitOfWork=new UnitOfWork();
         }
-        public bool InsertDivision(Region division)
+        public bool InsertDivision(Division division)
         {
-           unitOfWork.RegionRepository.Insert(division);
+           unitOfWork.DivisionRepository.Insert(division);
            return unitOfWork.Save();
         }
 
-        public bool UpdateDivision(Region division)
+        public bool UpdateDivision(Division division)
         {
-            unitOfWork.RegionRepository.Update(division);
+            unitOfWork.DivisionRepository.Update(division);
+            return unitOfWork.Save();
+        }
+        
+        public bool DeleteDivision(Division division)
+        {
+            unitOfWork.RegionRepository.Delete(division);
             return unitOfWork.Save();
         }
 
-        public List<Region> GetDivisions()
+        public List<Division> GetDivisions()
         {
-            return unitOfWork.RegionRepository.GetAll().ToList();
+
+            return unitOfWork.DivisionRepository.GetAll().ToList();
         }
+
+
+        public Division FindById(Guid? Id)
+        {
+            return unitOfWork.DivisionRepository.GetById(Id);
+        }
+
+        public IEnumerable<Division> Get(Expression<Func<Division, bool>> filter = null, Func<IQueryable<Division>, IOrderedQueryable<Division>> orderBy = null, string includeProperties = "")
+        {
+            throw new NotImplementedException();
+        }
+
+      
+
     }
 }

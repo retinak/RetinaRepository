@@ -10,7 +10,7 @@ using SASSMMS.Repository;
 
 namespace SASSMMS.ApplicationService.Services.Implementations
 {
-    class RegionService :IRegionService
+    public class RegionService :IRegionService
     {
         private UnitOfWork unitOfWork;
         public RegionService()
@@ -40,14 +40,14 @@ namespace SASSMMS.ApplicationService.Services.Implementations
             throw new NotImplementedException();
         }
 
-        public Region FindById(int Id)
-        {
-            throw new NotImplementedException();
-        }
+        //public Region FindById(int Id)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        public Region FindById(Guid Id)
+        public Region FindById(Guid? Id)
         {
-            throw new NotImplementedException();
+            return unitOfWork.RegionRepository.GetById(Id);
         }
 
         public IEnumerable<Region> Get(Expression<Func<Region, bool>> filter = null, Func<IQueryable<Region>, IOrderedQueryable<Region>> orderBy = null, string includeProperties = "")
@@ -57,7 +57,7 @@ namespace SASSMMS.ApplicationService.Services.Implementations
 
         public List<Region> GetAll()
         {
-            throw new NotImplementedException();
+            return unitOfWork.RegionRepository.GetAll().ToList();
         }
     }
 }

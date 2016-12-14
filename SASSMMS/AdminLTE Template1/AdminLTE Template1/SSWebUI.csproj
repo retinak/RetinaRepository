@@ -264,6 +264,7 @@
     <Compile Include="Models\MemberModel.cs" />
     <Compile Include="Models\OtherDetails.cs" />
     <Compile Include="Models\ParentModel.cs" />
+    <Compile Include="Models\RegionViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

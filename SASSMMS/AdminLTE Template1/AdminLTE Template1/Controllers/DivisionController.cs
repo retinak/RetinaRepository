@@ -6,6 +6,8 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using SASSMMS.ApplicationService.Services.Implementations;
+using SASSMMS.ApplicationService.Services.Interfaces;
 using SASSMMS.Domain.Entities;
 using SASSMMS.Repository;
 
@@ -14,11 +16,17 @@ namespace SSWebUI.Controllers
     public class DivisionController : Controller
     {
         private MainContext db = new MainContext();
+        private readonly IDivisionService divisionService;
 
+        public DivisionController()
+        {
+            divisionService=new DivisionService();
+        }
         // GET: Division
         public ActionResult Index()
         {
-            return View(db.Divisions.ToList());
+            var divisions = divisionService.GetDivisions();
+            return View(divisions);
         }
 
         // GET: Division/Details/5
@@ -28,7 +36,7 @@ namespace SSWebUI.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Division division = db.Divisions.Find(id);
+            var division = divisionService.FindById(id);
             if (division == null)
             {
                 return HttpNotFound();

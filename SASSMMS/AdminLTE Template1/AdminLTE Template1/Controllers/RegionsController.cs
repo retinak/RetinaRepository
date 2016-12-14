@@ -6,26 +6,30 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using SASSMMS.ApplicationService.Services.Implementations;
 using SASSMMS.ApplicationService.Services.Interfaces;
 using SASSMMS.Domain.Entities;
 using SASSMMS.Repository;
+using SSWebUI.Models;
 
 namespace SSWebUI.Controllers
 {
     public class RegionsController : Controller
     {
         private IRegionService regionService;
-
-        public RegionsController(IRegionService _regionService)
+         
+        public RegionsController()
         {
-            regionService = _regionService;
+            this.regionService = new RegionService();
         }
 
         private MainContext db = new MainContext();
 
+       
         // GET: Regions
         public ActionResult Index()
         {
+           
             var regions = regionService.GetAll();
             return View(regions);
         }
@@ -37,7 +41,8 @@ namespace SSWebUI.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Region region = db.Regions.Find(id);
+          
+            var region = regionService.FindById(id);
             if (region == null)
             {
                 return HttpNotFound();
@@ -56,27 +61,41 @@ namespace SSWebUI.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "RegionId,RegionName")] Region region)
+      
+
+        public ActionResult Create([Bind(Include = "RegionId,RegionName")]RegionViewModel regionViewModel)
         {
+            var region = ToRegion(regionViewModel);
+
             if (ModelState.IsValid)
             {
-                region.RegionId = Guid.NewGuid();
-                db.Regions.Add(region);
-                db.SaveChanges();
+                regionService.Add(region);
                 return RedirectToAction("Index");
             }
 
-            return View(region);
+            return View(regionViewModel);
         }
 
         // GET: Regions/Edit/5
+
+    
+
+        private Region ToRegion(RegionViewModel regionViewModel)
+        {
+            var region = new Region
+            {
+                RegionId = Guid.NewGuid(),
+                RegionName = regionViewModel.RegionName
+            };
+            return region;
+        }
         public ActionResult Edit(Guid? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Region region = db.Regions.Find(id);
+            var region = regionService.FindById(id);
             if (region == null)
             {
                 return HttpNotFound();
@@ -107,7 +126,7 @@ namespace SSWebUI.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Region region = db.Regions.Find(id);
+            Region region = regionService.FindById(id);
             if (region == null)
             {
                 return HttpNotFound();
@@ -120,7 +139,7 @@ namespace SSWebUI.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(Guid id)
         {
-            Region region = db.Regions.Find(id);
+            var region = db.Regions.Find(id);
             db.Regions.Remove(region);
             db.SaveChanges();
             return RedirectToAction("Index");

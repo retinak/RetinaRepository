@@ -14,8 +14,8 @@ namespace SASSMMS.ApplicationService.Services.Interfaces
         bool Edit(Region entity);
         bool Delete(Region entity);
         List<Region> FindBy(Expression<Func<Region, bool>> predicate);
-        Region FindById(int Id);
-        Region FindById(Guid Id);
+        //Region FindById(int Id);
+        Region FindById(Guid?Id);
         IEnumerable<Region> Get(
            Expression<Func<Region, bool>> filter = null,
            Func<IQueryable<Region>, IOrderedQueryable<Region>> orderBy = null,
