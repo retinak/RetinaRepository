@@ -6,15 +6,28 @@ namespace SASSMMS.Repository
 {
     public class UnitOfWork :  IDisposable
     {
-        private MainContext simsContext = new MainContext();
+        private MainContext mainContext = new MainContext();
        
-        #region Curriculum Module Repository
+        #region Registration Module
         private GenericRepository<Division> divisionRepository;
         private GenericRepository<Category> categoryLevelRepository;
         private GenericRepository<Member> memberRepository;
+        private GenericRepository<Subcity> subcityRepository; 
       
-        private GenericRepository<Applicant> applicantRepository;
+     
         private GenericRepository<Region> regionRepository;
+
+        public GenericRepository<Subcity> SubcityRepository
+        {
+            get
+            {
+                if (subcityRepository == null)
+                {
+                    subcityRepository=new GenericRepository<Subcity>(mainContext);
+                }
+                return subcityRepository;
+            }
+        } 
 
         public GenericRepository<Region> RegionRepository
         {
@@ -22,21 +35,21 @@ namespace SASSMMS.Repository
             {
                 if (this.regionRepository == null)
                 {
-                    this.regionRepository = new GenericRepository<Region>(simsContext);
+                    this.regionRepository = new GenericRepository<Region>(mainContext);
                 }
                 return regionRepository;
             }
         }
 
-        public GenericRepository<Applicant> ApplicantRepository
+        public GenericRepository<Member> MemberRepository
         {
             get
             {
-                if (this.applicantRepository == null)
+                if (this.MemberRepository == null)
                 {
-                    this.applicantRepository = new GenericRepository<Applicant>(simsContext);
+                    this.memberRepository = new GenericRepository<Member>(mainContext);
                 }
-                return applicantRepository;
+                return MemberRepository;
             }
         }
         public GenericRepository<Division> DivisionRepository
@@ -45,7 +58,7 @@ namespace SASSMMS.Repository
             {
                 if (this.divisionRepository == null)
                 {
-                    this.divisionRepository = new GenericRepository<Division>(simsContext);
+                    this.divisionRepository = new GenericRepository<Division>(mainContext);
                 }
                 return divisionRepository;
             }
@@ -56,7 +69,7 @@ namespace SASSMMS.Repository
             {
                 if (this.categoryLevelRepository == null)
                 {
-                    this.categoryLevelRepository = new GenericRepository<Category>(simsContext);
+                    this.categoryLevelRepository = new GenericRepository<Category>(mainContext);
                 }
                 return categoryLevelRepository;
             }
@@ -67,7 +80,7 @@ namespace SASSMMS.Repository
             {
                 if (this.memberRepository == null)
                 {
-                    this.memberRepository = new GenericRepository<Member>(simsContext);
+                    this.memberRepository = new GenericRepository<Member>(mainContext);
                 }
                 return memberRepository;
             }
@@ -78,7 +91,7 @@ namespace SASSMMS.Repository
         //    {
         //        if (this.receiveRepository == null)
         //        {
-        //            this.receiveRepository = new GenericRepository<Receive>(simsContext);
+        //            this.receiveRepository = new GenericRepository<Receive>(mainContext);
         //        }
         //        return receiveRepository;
         //    }
@@ -89,7 +102,7 @@ namespace SASSMMS.Repository
         //    {
         //        if (this.salesRepository == null)
         //        {
-        //            this.salesRepository = new GenericRepository<Sales>(simsContext);
+        //            this.salesRepository = new GenericRepository<Sales>(mainContext);
         //        }
         //        return salesRepository;
         //    }
@@ -100,7 +113,7 @@ namespace SASSMMS.Repository
         //    {
         //        if (this.salesDetailRepository == null)
         //        {
-        //            this.salesDetailRepository = new GenericRepository<SalesDetail>(simsContext);
+        //            this.salesDetailRepository = new GenericRepository<SalesDetail>(mainContext);
         //        }
         //        return salesDetailRepository;
         //    }
@@ -111,7 +124,7 @@ namespace SASSMMS.Repository
         //    {
         //        if (this.receivedDetailRepository == null)
         //        {
-        //            this.receivedDetailRepository = new GenericRepository<ReceiveDetail>(simsContext);
+        //            this.receivedDetailRepository = new GenericRepository<ReceiveDetail>(mainContext);
         //        }
         //        return receivedDetailRepository;
         //    }
@@ -122,7 +135,7 @@ namespace SASSMMS.Repository
         //    {
         //        if (this.bjncardRepository == null)
         //        {
-        //            this.bjncardRepository = new GenericRepository<BinCard>(simsContext);
+        //            this.bjncardRepository = new GenericRepository<BinCard>(mainContext);
         //        }
         //        return bjncardRepository;
         //    }
@@ -131,25 +144,24 @@ namespace SASSMMS.Repository
 
         public bool Save()
         {
-            int saveStatus = simsContext.SaveChanges();
+            int saveStatus = mainContext.SaveChanges();
             if (saveStatus > 0)
                 return true;
-            else
-                return false;
+            return false;
         }
 
         private bool disposed = false;
 
         protected virtual void Dispose(bool disposing)
         {
-            if (!this.disposed)
+            if (!disposed)
             {
                 if (disposing)
                 {
-                    simsContext.Dispose();
+                    mainContext.Dispose();
                 }
             }
-            this.disposed = true;
+            disposed = true;
         }
 
         public void Dispose()

@@ -8,7 +8,7 @@ using SASSMMS.Domain.Entities;
 
 namespace SASSMMS.ApplicationService.Services.Interfaces
 {
-    public interface IRegionService
+    public interface IRegionService :IDisposable
     {
         bool Add(Region entity);
         bool Edit(Region entity);
@@ -21,5 +21,7 @@ namespace SASSMMS.ApplicationService.Services.Interfaces
            Func<IQueryable<Region>, IOrderedQueryable<Region>> orderBy = null,
            string includeProperties = "");
         List<Region> GetAll();
+
+        
     }
 }

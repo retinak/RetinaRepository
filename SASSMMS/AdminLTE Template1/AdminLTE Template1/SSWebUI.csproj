@@ -265,6 +265,7 @@
     <Compile Include="Models\OtherDetails.cs" />
     <Compile Include="Models\ParentModel.cs" />
     <Compile Include="Models\RegionViewModel.cs" />
+    <Compile Include="Models\SubcityViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -293,12 +294,8 @@
     <Content Include="Views\Subcities\Delete.cshtml" />
     <Content Include="Views\Subcities\Details.cshtml" />
     <Content Include="Views\Subcities\Edit.cshtml" />
-    <Content Include="Views\Subcities\Index.cshtml" />
     <Content Include="Views\Regions\Create.cshtml" />
-    <Content Include="Views\Regions\Delete.cshtml" />
     <Content Include="Views\Regions\Details.cshtml" />
-    <Content Include="Views\Regions\Edit.cshtml" />
-    <Content Include="Views\Regions\Index.cshtml" />
     <Content Include="Views\Woredas\Index.cshtml" />
     <Content Include="Views\Woredas\Details.cshtml" />
     <Content Include="Views\Woredas\Create.cshtml" />
@@ -317,7 +314,6 @@
     <Content Include="Views\Division\Delete.cshtml" />
     <Content Include="Views\Division\Details.cshtml" />
     <Content Include="Views\Division\Edit.cshtml" />
-    <Content Include="Views\Division\Index.cshtml" />
     <Content Include="Views\Member\Shared\_AddressView.cshtml" />
     <Content Include="Views\Position\Create.cshtml" />
     <Content Include="Views\Position\Delete.cshtml" />
@@ -344,6 +340,11 @@
     <Content Include="Views\Members\Details.cshtml" />
     <Content Include="Views\Members\Edit.cshtml" />
     <Content Include="Views\Members\Index.cshtml" />
+    <Content Include="Views\Regions\Index.cshtml" />
+    <Content Include="Views\Regions\Edit.cshtml" />
+    <Content Include="Views\Regions\Delete.cshtml" />
+    <Content Include="Views\Division\Index.cshtml" />
+    <Content Include="Views\Subcities\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

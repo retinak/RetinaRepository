@@ -27,24 +27,21 @@ namespace SASSMMS.ApplicationService.Services.Implementations
 
         public bool Edit(Region entity)
         {
-            throw new NotImplementedException();
+            unitOfWork.RegionRepository.Update(entity);
+            return unitOfWork.Save();
         }
 
         public bool Delete(Region entity)
         {
-            throw new NotImplementedException();
+            unitOfWork.RegionRepository.Delete(entity);
+            return unitOfWork.Save();
         }
 
         public List<Region> FindBy(Expression<Func<Region, bool>> predicate)
         {
-            throw new NotImplementedException();
+            return unitOfWork.RegionRepository.Get(predicate).ToList();
         }
-
-        //public Region FindById(int Id)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
+        
         public Region FindById(Guid? Id)
         {
             return unitOfWork.RegionRepository.GetById(Id);
@@ -58,6 +55,12 @@ namespace SASSMMS.ApplicationService.Services.Implementations
         public List<Region> GetAll()
         {
             return unitOfWork.RegionRepository.GetAll().ToList();
+        }
+
+
+        public void Dispose()
+        {
+           unitOfWork.Dispose();
         }
     }
 }

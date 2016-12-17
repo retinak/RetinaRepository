@@ -25,13 +25,31 @@ namespace SSWebUI.Controllers
 
         private MainContext db = new MainContext();
 
-       
+        public RegionViewModel GetRegionModel(Region region)
+        {
+            var regionModel=new RegionViewModel();
+            regionModel.RegionId = region.RegionId;
+            regionModel.RegionName = region.RegionName;
+            return regionModel;
+        }
+
+        private List<RegionViewModel> GetRegionsModel(List<Region> lstRegions )
+        {
+            var lstRegionModel=new List<RegionViewModel>();
+            foreach (var region in lstRegions)
+            {
+                
+                lstRegionModel.Add(GetRegionModel(region));
+            }
+            return lstRegionModel;
+        } 
         // GET: Regions
         public ActionResult Index()
         {
            
             var regions = regionService.GetAll();
-            return View(regions);
+
+            return View(GetRegionsModel(regions));
         }
 
         // GET: Regions/Details/5
@@ -43,11 +61,12 @@ namespace SSWebUI.Controllers
             }
           
             var region = regionService.FindById(id);
+            var regionModel = GetRegionModel(region);
             if (region == null)
             {
                 return HttpNotFound();
             }
-            return View(region);
+            return View(regionModel);
         }
 
         // GET: Regions/Create
@@ -78,7 +97,14 @@ namespace SSWebUI.Controllers
 
         // GET: Regions/Edit/5
 
-    
+        private RegionViewModel GetRegionViewModel(Region region)
+        {
+            var regionViewModel=new RegionViewModel();
+            regionViewModel.RegionId = region.RegionId;
+            regionViewModel.RegionName = region.RegionName;
+
+            return regionViewModel;
+        }
 
         private Region ToRegion(RegionViewModel regionViewModel)
         {
@@ -96,11 +122,12 @@ namespace SSWebUI.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             var region = regionService.FindById(id);
+
             if (region == null)
             {
                 return HttpNotFound();
             }
-            return View(region);
+            return View(GetRegionModel(region));
         }
 
         // POST: Regions/Edit/5
@@ -108,15 +135,17 @@ namespace SSWebUI.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "RegionId,RegionName")] Region region)
+        public ActionResult Edit([Bind(Include = "RegionId,RegionName")] RegionViewModel regionViewModel)
         {
+            var region = regionService.FindById(regionViewModel.RegionId);
+            region.RegionName = regionViewModel.RegionName;
+           
             if (ModelState.IsValid)
             {
-                db.Entry(region).State = EntityState.Modified;
-                db.SaveChanges();
+                regionService.Edit(region);
                 return RedirectToAction("Index");
             }
-            return View(region);
+            return View(regionViewModel);
         }
 
         // GET: Regions/Delete/5
@@ -139,19 +168,12 @@ namespace SSWebUI.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(Guid id)
         {
-            var region = db.Regions.Find(id);
-            db.Regions.Remove(region);
-            db.SaveChanges();
+            var region = regionService.FindById(id);
+            regionService.Delete(region);
             return RedirectToAction("Index");
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+      
+        
     }
 }

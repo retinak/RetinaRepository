@@ -1,36 +1,41 @@
-﻿@model IEnumerable<SASSMMS.Domain.Entities.Subcity>
+﻿@model IEnumerable<SSWebUI.Models.SubcityViewModel>
 
 @{
-    ViewBag.Title = "Subcities";
+    ViewBag.Title = "Index";
 }
 
+<h2>Index</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Region.RegionName)
-        </th>
+       
+       
         <th>
             @Html.DisplayNameFor(model => model.SubcityName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RegionName)
         </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Region.RegionName)
-        </td>
+       
+      
         <td>
             @Html.DisplayFor(modelItem => item.SubcityName)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.SubcityId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.SubcityId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.SubcityId })
+            @Html.DisplayFor(modelItem => item.RegionName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
         </td>
     </tr>
 }

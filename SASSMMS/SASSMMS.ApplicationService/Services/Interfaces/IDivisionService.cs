@@ -22,7 +22,7 @@ namespace SASSMMS.ApplicationService.Services.Interfaces
            Expression<Func<Division, bool>> filter = null,
            Func<IQueryable<Division>, IOrderedQueryable<Division>> orderBy = null,
            string includeProperties = "");
-    
 
+        void Dispose();
     }
 }

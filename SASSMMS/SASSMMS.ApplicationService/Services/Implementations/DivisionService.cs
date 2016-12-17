@@ -32,8 +32,9 @@ namespace SASSMMS.ApplicationService.Services.Implementations
         
         public bool DeleteDivision(Division division)
         {
-            unitOfWork.RegionRepository.Delete(division);
+            unitOfWork.DivisionRepository.Delete(division);
             return unitOfWork.Save();
+
         }
 
         public List<Division> GetDivisions()
@@ -46,6 +47,7 @@ namespace SASSMMS.ApplicationService.Services.Implementations
         public Division FindById(Guid? Id)
         {
             return unitOfWork.DivisionRepository.GetById(Id);
+
         }
 
         public IEnumerable<Division> Get(Expression<Func<Division, bool>> filter = null, Func<IQueryable<Division>, IOrderedQueryable<Division>> orderBy = null, string includeProperties = "")
@@ -53,7 +55,9 @@ namespace SASSMMS.ApplicationService.Services.Implementations
             throw new NotImplementedException();
         }
 
-      
-
+        public void Dispose()
+        {
+            unitOfWork.Dispose();
+        }
     }
 }

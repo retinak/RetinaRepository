@@ -41,11 +41,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\Implementations\ApplicantService.cs" />
     <Compile Include="Services\Implementations\DivisionService.cs" />
     <Compile Include="Services\Implementations\RegionService.cs" />
-    <Compile Include="Services\Interfaces\IApplicantInterface.cs" />
+    <Compile Include="Services\Implementations\SubcityService.cs" />
     <Compile Include="Services\Interfaces\IDivisionService.cs" />
+    <Compile Include="Services\Interfaces\ISubcityService.cs" />
     <Compile Include="Services\Interfaces\IRegionService.cs" />
   </ItemGroup>
   <ItemGroup>
