@@ -249,11 +249,11 @@
     <Compile Include="Controllers\ParentController.cs" />
     <Compile Include="Controllers\PositionController.cs" />
     <Compile Include="Controllers\QualificationsController.cs" />
-    <Compile Include="Controllers\RegionsController.cs" />
+    <Compile Include="Controllers\RegionController.cs" />
     <Compile Include="Controllers\SchoolController.cs" />
     <Compile Include="Controllers\StatusController.cs" />
-    <Compile Include="Controllers\SubcitiesController.cs" />
-    <Compile Include="Controllers\WoredasController.cs" />
+    <Compile Include="Controllers\SubcityController.cs" />
+    <Compile Include="Controllers\WoredaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -290,17 +290,15 @@
     <Content Include="Views\Shared\_ControlSidebar.cshtml" />
     <Content Include="Views\Parent\Index.cshtml" />
     <Content Include="Views\Member\Create.cshtml" />
-    <Content Include="Views\Subcities\Create.cshtml" />
-    <Content Include="Views\Subcities\Delete.cshtml" />
-    <Content Include="Views\Subcities\Details.cshtml" />
-    <Content Include="Views\Subcities\Edit.cshtml" />
-    <Content Include="Views\Regions\Create.cshtml" />
-    <Content Include="Views\Regions\Details.cshtml" />
-    <Content Include="Views\Woredas\Index.cshtml" />
-    <Content Include="Views\Woredas\Details.cshtml" />
-    <Content Include="Views\Woredas\Create.cshtml" />
-    <Content Include="Views\Woredas\Edit.cshtml" />
-    <Content Include="Views\Woredas\Delete.cshtml" />
+    <Content Include="Views\Subcity\Delete.cshtml" />
+    <Content Include="Views\Subcity\Details.cshtml" />
+    <Content Include="Views\Region\Create.cshtml" />
+    <Content Include="Views\Region\Details.cshtml" />
+    <Content Include="Views\Woreda\Index.cshtml" />
+    <Content Include="Views\Woreda\Details.cshtml" />
+    <Content Include="Views\Woreda\Create.cshtml" />
+    <Content Include="Views\Woreda\Edit.cshtml" />
+    <Content Include="Views\Woreda\Delete.cshtml" />
     <Content Include="Views\Member\Shared\_BasicInfoView.cshtml" />
     <Content Include="Views\Member\SaveMember.cshtml" />
     <Content Include="Views\Member\Shared\_AdditionalInfo.cshtml" />
@@ -340,11 +338,13 @@
     <Content Include="Views\Members\Details.cshtml" />
     <Content Include="Views\Members\Edit.cshtml" />
     <Content Include="Views\Members\Index.cshtml" />
-    <Content Include="Views\Regions\Index.cshtml" />
-    <Content Include="Views\Regions\Edit.cshtml" />
-    <Content Include="Views\Regions\Delete.cshtml" />
+    <Content Include="Views\Region\Index.cshtml" />
+    <Content Include="Views\Region\Edit.cshtml" />
+    <Content Include="Views\Region\Delete.cshtml" />
     <Content Include="Views\Division\Index.cshtml" />
-    <Content Include="Views\Subcities\Index.cshtml" />
+    <Content Include="Views\Subcity\Index.cshtml" />
+    <Content Include="Views\Subcity\Create.cshtml" />
+    <Content Include="Views\Subcity\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

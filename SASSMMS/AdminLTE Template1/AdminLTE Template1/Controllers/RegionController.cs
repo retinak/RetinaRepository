@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using SASSMMS.ApplicationService.Services.Implementations;
 using SASSMMS.ApplicationService.Services.Interfaces;
@@ -14,16 +10,15 @@ using SSWebUI.Models;
 
 namespace SSWebUI.Controllers
 {
-    public class RegionsController : Controller
+    public class RegionController : Controller
     {
-        private IRegionService regionService;
+        private readonly IRegionService regionService;
          
-        public RegionsController()
+        public RegionController()
         {
-            this.regionService = new RegionService();
+            regionService = new RegionService();
         }
 
-        private MainContext db = new MainContext();
 
         public RegionViewModel GetRegionModel(Region region)
         {
@@ -97,14 +92,7 @@ namespace SSWebUI.Controllers
 
         // GET: Regions/Edit/5
 
-        private RegionViewModel GetRegionViewModel(Region region)
-        {
-            var regionViewModel=new RegionViewModel();
-            regionViewModel.RegionId = region.RegionId;
-            regionViewModel.RegionName = region.RegionName;
-
-            return regionViewModel;
-        }
+       
 
         private Region ToRegion(RegionViewModel regionViewModel)
         {

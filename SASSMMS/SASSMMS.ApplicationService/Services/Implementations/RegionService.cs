@@ -47,7 +47,8 @@ namespace SASSMMS.ApplicationService.Services.Implementations
             return unitOfWork.RegionRepository.GetById(Id);
         }
 
-        public IEnumerable<Region> Get(Expression<Func<Region, bool>> filter = null, Func<IQueryable<Region>, IOrderedQueryable<Region>> orderBy = null, string includeProperties = "")
+        public IEnumerable<Region> Get(Expression<Func<Region, bool>> filter = null, 
+            Func<IQueryable<Region>, IOrderedQueryable<Region>> orderBy = null, string includeProperties = "")
         {
             throw new NotImplementedException();
         }

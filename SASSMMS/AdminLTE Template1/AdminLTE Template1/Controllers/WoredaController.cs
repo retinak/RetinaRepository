@@ -1,17 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using SASSMMS.Domain.Entities;
 using SASSMMS.Repository;
 
 namespace SSWebUI.Controllers
 {
-    public class WoredasController : Controller
+    public class WoredaController : Controller
     {
         private MainContext db = new MainContext();
 
