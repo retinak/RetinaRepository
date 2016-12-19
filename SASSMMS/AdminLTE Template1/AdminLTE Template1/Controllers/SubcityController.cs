@@ -121,7 +121,7 @@ namespace SSWebUI.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "SubcityId,RegionId,SubcityName")] SubcityViewModel subcityViewModel)
         {
-            var temp = subcityViewModel.SubcityId;
+            
 
             var subcity = subcityService.GetSubcity(subcityViewModel.SubcityId);
             subcity.RegionId = subcityViewModel.RegionId;
@@ -136,7 +136,20 @@ namespace SSWebUI.Controllers
             ViewBag.RegionId = new SelectList(regionService.GetAll(), "RegionId", "RegionName", subcity.RegionId);
             return View(GetSubcityViewModel(subcity));
         }
+        //public ActionResult Edit([Bind(Include = "DivisionId,DepartmentName,Phone,Email")] DivisionModel divisionModel)
+        //{
+        //    var division = divisionService.FindById(divisionModel.DivisionId);
+        //    division.DepartmentName = divisionModel.DepartmentName;
+        //    division.Email = divisionModel.Email;
+        //    division.Phone = divisionModel.Phone;
 
+        //    if (ModelState.IsValid)
+        //    {
+        //        divisionService.UpdateDivision(division);
+        //        return RedirectToAction("Index");
+        //    }
+        //    return View(GetDivisionModel(division));
+        //}
         // GET: Subcities/Delete/5
         public ActionResult Delete(Guid? id)
         {

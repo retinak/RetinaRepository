@@ -12,10 +12,23 @@ namespace SASSMMS.Repository
         private GenericRepository<Division> divisionRepository;
         private GenericRepository<Category> categoryLevelRepository;
         private GenericRepository<Member> memberRepository;
-        private GenericRepository<Subcity> subcityRepository; 
+        private GenericRepository<Subcity> subcityRepository;
+        private GenericRepository<Woreda> woredaRepository; 
       
      
         private GenericRepository<Region> regionRepository;
+
+        public GenericRepository<Woreda> WoredaRepository
+        {
+            get
+            {
+                if (woredaRepository == null)
+                {
+                    woredaRepository=new GenericRepository<Woreda>(mainContext);
+                }
+                return woredaRepository;
+            }
+        }
 
         public GenericRepository<Subcity> SubcityRepository
         {

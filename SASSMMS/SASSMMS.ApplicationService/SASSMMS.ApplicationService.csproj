@@ -44,9 +44,11 @@
     <Compile Include="Services\Implementations\DivisionService.cs" />
     <Compile Include="Services\Implementations\RegionService.cs" />
     <Compile Include="Services\Implementations\SubcityService.cs" />
+    <Compile Include="Services\Implementations\WoredaService.cs" />
     <Compile Include="Services\Interfaces\IDivisionService.cs" />
     <Compile Include="Services\Interfaces\ISubcityService.cs" />
     <Compile Include="Services\Interfaces\IRegionService.cs" />
+    <Compile Include="Services\Interfaces\IWoredaService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SASSMMS.Domain\SASSMMS.Domain.csproj">

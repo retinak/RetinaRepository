@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Web.Mvc;
 using SASSMMS.ApplicationService.Services.Implementations;
@@ -28,13 +29,15 @@ namespace SSWebUI.Controllers
         }
         private List<DivisionModel> GetRegionsModels(List<Division> lstDivisions)
         {
-            var lstDivisionModel = new List<DivisionModel>();
-            foreach (var division in lstDivisions)
-            {
 
-                lstDivisionModel.Add(GetDivisionModel(division));
-            }
-            return lstDivisionModel;
+            return lstDivisions.Select(GetDivisionModel).ToList();
+            //var lstDivisionModel = new List<DivisionModel>();
+            //foreach (var division in lstDivisions)
+            //{
+
+            //    lstDivisionModel.Add(GetDivisionModel(division));
+            //}
+            //return lstDivisionModel;
         }
         private DivisionModel GetDivisionModel(Division division)
         {

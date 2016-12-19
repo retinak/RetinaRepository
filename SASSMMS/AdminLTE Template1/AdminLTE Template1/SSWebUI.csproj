@@ -266,6 +266,7 @@
     <Compile Include="Models\ParentModel.cs" />
     <Compile Include="Models\RegionViewModel.cs" />
     <Compile Include="Models\SubcityViewModel.cs" />
+    <Compile Include="Models\WoredaViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
