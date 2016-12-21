@@ -3,6 +3,9 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using AdminLTE_Template1.App_Start;
+using SSWebUI;
+
+//using SSWebUI.SecurityManagement;
 
 namespace AdminLTE_Template1
 {
@@ -13,6 +16,7 @@ namespace AdminLTE_Template1
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
         }
     }
 }

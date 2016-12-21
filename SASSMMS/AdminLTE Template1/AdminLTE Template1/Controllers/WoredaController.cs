@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
-using System.EnterpriseServices;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
 using SASSMMS.ApplicationService.Services.Implementations;
 using SASSMMS.ApplicationService.Services.Interfaces;
 using SASSMMS.Domain.Entities;
-using SASSMMS.Repository;
 using SSWebUI.Models;
 
 namespace SSWebUI.Controllers
@@ -29,24 +26,30 @@ namespace SSWebUI.Controllers
         public ActionResult Index()
         {
            // var woredas = db.Woredas.Include(w => w.Subcity);
-            var woredas = woredaService.GetWoredas();
+            var woredas = woredaService.GetWoredas().ToList();
             return View(GetWoredaViewModels(woredas));
         }
 
-        private WoredaViewModel GetWoredaViewModel(Woreda woreda)
+        public WoredaViewModel GetWoredaViewModel(Woreda woreda)
         {
             var woredaViewModel = new WoredaViewModel
             {
                 WoredaId = woreda.WoredaId,
-                Name = woreda.Name,
+                WoredaName = woreda.WoredaName,
                 SubcityId = woreda.SubcityId,
+                SubcityName = woreda.Subcity.SubcityName
 
             };
             return woredaViewModel;
         }
         private List<WoredaViewModel> GetWoredaViewModels(List<Woreda> lstWoredas)
         {
-            return lstWoredas.Select(GetWoredaViewModel).ToList();
+            var lstWoredaViewModel = new List<WoredaViewModel>();
+            foreach (var w in lstWoredas)
+            {
+                lstWoredaViewModel.Add(GetWoredaViewModel(w));
+            }
+            return lstWoredaViewModel;
         } 
         // GET: Woredas/Details/5
         public ActionResult Details(Guid? id)
@@ -75,7 +78,7 @@ namespace SSWebUI.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "WoredaId,SubcityId")] WoredaViewModel  woredaViewModel)
+        public ActionResult Create([Bind(Include = "WoredaId,SubcityId,WoredaName")] WoredaViewModel  woredaViewModel)
         {
 
             var woreda = GetWoreda(woredaViewModel);
@@ -95,7 +98,7 @@ namespace SSWebUI.Controllers
         {
             var woreda = new Woreda
             {
-                Name = woredaViewModel.Name,
+                WoredaName = woredaViewModel.WoredaName,
                 SubcityId = woredaViewModel.SubcityId
 
             };
@@ -108,12 +111,12 @@ namespace SSWebUI.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Woreda woreda = woredaService.GetWoreda(id);
+            var woreda = woredaService.GetWoreda(id);
             if (woreda == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.SubcityId = new SelectList(woredaService.GetWoredas(), "SubcityId", "SubcityName", woreda.SubcityId);
+            ViewBag.SubcityId = new SelectList(subcityService.GeSubcities(), "SubcityId", "SubcityName", woreda.SubcityId);
             return View(GetWoredaViewModel(woreda));
         }
 
@@ -122,11 +125,11 @@ namespace SSWebUI.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "WoredaId,SubcityId")] WoredaViewModel woredaViewModel)
+        public ActionResult Edit([Bind(Include = "WoredaId,SubcityId,WoredaName,SubcityName")] WoredaViewModel woredaViewModel)
         {
             var woreda = woredaService.GetWoreda(woredaViewModel.WoredaId);
             woreda.SubcityId = woredaViewModel.SubcityId;
-            woreda.Name = woredaViewModel.Name;
+            woreda.WoredaName = woredaViewModel.WoredaName;
 
             if (ModelState.IsValid)
             {

@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System.ComponentModel;
 using SASSMMS.Domain.Entities;
 
 namespace SSWebUI.Models
@@ -10,10 +8,11 @@ namespace SSWebUI.Models
     {
         public Guid WoredaId { get; set; }
         public Guid SubcityId { get; set; }
+        [DisplayName("Subcity")]
         public string SubcityName { get; set; }
-        public string Name { get; set; }
-        public virtual Subcity Subcity { get; set; }
-
-        public virtual List<Address> Addresses { get; set; }
+        [DisplayName("Woreda")]
+        public string WoredaName { get; set; }
+        //public virtual Subcity Subcity { get; set; }
+        
     }
 }

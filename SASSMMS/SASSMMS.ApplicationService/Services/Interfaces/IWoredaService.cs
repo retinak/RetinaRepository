@@ -14,7 +14,7 @@ namespace SASSMMS.ApplicationService.Services.Interfaces
         bool UpdateWoreda(Woreda woreda);
         bool DeleteWoreda(Woreda woreda);
         Woreda GetWoreda(Guid? id);
-        List<Woreda> GetWoredas();
+        IEnumerable<Woreda> GetWoredas();
         List<Woreda> FindBy(Expression<Func<Woreda, bool>> predicate);
         void Dispose();
     }

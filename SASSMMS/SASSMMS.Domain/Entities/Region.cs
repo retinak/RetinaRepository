@@ -7,7 +7,7 @@ namespace SASSMMS.Domain.Entities
     public class Region
     {
         public Guid RegionId { get; set; }
-        [DisplayName("Region Name")]
+        [DisplayName("Region WoredaName")]
         public string RegionName { get; set; }
         public virtual  List<Subcity> Subcities { get; set; } 
         

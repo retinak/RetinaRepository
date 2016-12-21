@@ -1,9 +1,13 @@
 ﻿@{
     ViewBag.Title = "Index";
-    ViewBag.Description = "Home Page";
+    //ViewBag.Description = "Home Page";
 }
+<p> Hello @User.Identity.Name , How's the weather in @ViewBag.Country?</p>
 
-<div class="row">
+@*<p>
+    <a href="@Url.Action("logout", "auth")">Log Out</a>
+</p>*@
+@*<div class="row">
     <div class="col-xs-12 col-md-5">
         <div class="box box-default">
             <div class="box-header">
@@ -176,4 +180,4 @@
             </div>
         </div>
     </div>
-</div>
+</div>*@

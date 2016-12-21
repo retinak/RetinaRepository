@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 using SASSMMS.ApplicationService.Services.Interfaces;
 using SASSMMS.Domain.Entities;
 using SASSMMS.Repository;
@@ -41,7 +39,7 @@ namespace SASSMMS.ApplicationService.Services.Implementations
             return unitOfWork.WoredaRepository.GetById(id);
         }
 
-        public List<Woreda> GetWoredas()
+        public IEnumerable<Woreda> GetWoredas()
         {
             return unitOfWork.WoredaRepository.GetAll().ToList();
         }
