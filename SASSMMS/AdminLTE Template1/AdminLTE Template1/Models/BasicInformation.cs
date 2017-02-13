@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
 
 namespace SSWebUI.Models
 {
@@ -12,8 +9,8 @@ namespace SSWebUI.Models
         [Key]
         public Guid MemberId { get; set; }
         public string AttendanceNmumber { get; set; }
-        
         public Guid ParentId { get; set; }
+        //public Guid DivisionId { get; set; }
         public string CurrentStatus { get; set; }
         public Guid DivisionId { get; set; }
         public  string FirstName { get; set; }

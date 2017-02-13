@@ -6,18 +6,30 @@ namespace SASSMMS.Repository
 {
     public class UnitOfWork :  IDisposable
     {
-        private MainContext mainContext = new MainContext();
+        private readonly MainContext mainContext = new MainContext();
        
         #region Registration Module
         private GenericRepository<Division> divisionRepository;
-        private GenericRepository<Category> categoryLevelRepository;
+        private GenericRepository<Category> categoryRepository;
         private GenericRepository<Member> memberRepository;
         private GenericRepository<Subcity> subcityRepository;
-        private GenericRepository<Woreda> woredaRepository; 
-      
-     
+        private GenericRepository<Woreda> woredaRepository;
+        private GenericRepository<School> schoolRepository;
+        private GenericRepository<Qualification> qualificationRepository; 
         private GenericRepository<Region> regionRepository;
+        private GenericRepository<Position> positionRepository;
+        private GenericRepository<Status> statusRepository;
 
+        public GenericRepository<Status> StatusRepository
+        {
+            get {
+                if (statusRepository == null)
+                {
+                    statusRepository = new GenericRepository<Status>(mainContext);
+                }
+                return statusRepository;
+            }
+        } 
         public GenericRepository<Woreda> WoredaRepository
         {
             get
@@ -40,15 +52,45 @@ namespace SASSMMS.Repository
                 }
                 return subcityRepository;
             }
-        } 
+        }
 
+        public GenericRepository<Position> PositionRepository
+        {
+            get {
+                if (positionRepository == null)
+                {
+                    positionRepository=new GenericRepository<Position>(mainContext);
+                }
+                return positionRepository;
+            }
+        } 
+        public GenericRepository<Qualification> QualificationRepository
+        {
+            get { if( qualificationRepository==null)
+                {
+                    qualificationRepository=new GenericRepository<Qualification>(mainContext);
+                }
+                return qualificationRepository;
+            }
+        } 
+        public GenericRepository<School> SchoolRepository
+        {
+            get
+            {
+                if (schoolRepository == null)
+                {
+                    schoolRepository=new GenericRepository<School>(mainContext);
+                }
+                return schoolRepository;
+            }
+        } 
         public GenericRepository<Region> RegionRepository
         {
             get
             {
-                if (this.regionRepository == null)
+                if (regionRepository == null)
                 {
-                    this.regionRepository = new GenericRepository<Region>(mainContext);
+                    regionRepository = new GenericRepository<Region>(mainContext);
                 }
                 return regionRepository;
             }
@@ -56,48 +98,31 @@ namespace SASSMMS.Repository
 
         public GenericRepository<Member> MemberRepository
         {
-            get
-            {
-                if (this.MemberRepository == null)
-                {
-                    this.memberRepository = new GenericRepository<Member>(mainContext);
-                }
-                return MemberRepository;
-            }
-        }
+            get { return memberRepository ?? (memberRepository = new GenericRepository<Member>(mainContext)); }
+        } 
         public GenericRepository<Division> DivisionRepository
         {
             get
             {
-                if (this.divisionRepository == null)
+                if (divisionRepository == null)
                 {
-                    this.divisionRepository = new GenericRepository<Division>(mainContext);
+                    divisionRepository = new GenericRepository<Division>(mainContext);
                 }
                 return divisionRepository;
             }
         }
-        public GenericRepository<Category> CategoryLevelReporitory
+        public GenericRepository<Category> CategoryRepository
         {
             get
             {
-                if (this.categoryLevelRepository == null)
+                if (categoryRepository == null)
                 {
-                    this.categoryLevelRepository = new GenericRepository<Category>(mainContext);
+                    categoryRepository = new GenericRepository<Category>(mainContext);
                 }
-                return categoryLevelRepository;
+                return categoryRepository;
             }
         }
-        public GenericRepository<Member> MemberReporitory
-        {
-            get
-            {
-                if (this.memberRepository == null)
-                {
-                    this.memberRepository = new GenericRepository<Member>(mainContext);
-                }
-                return memberRepository;
-            }
-        }
+       
         //public GenericRepository<Receive> ReceiveReporitory
         //{
         //    get

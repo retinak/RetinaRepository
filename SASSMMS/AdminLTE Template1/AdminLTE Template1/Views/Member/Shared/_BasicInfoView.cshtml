@@ -1,46 +1,47 @@
-﻿@model SSWebUI.Models.BasicInformation
+﻿@model SSWebUI.Models.MemberModel
+@using Kendo.Mvc;
+@using Kendo.Mvc.UI
+@using SSWebUI.Controllers
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-
-    
 
     <div class="row">
         <div class="form-horizontal">
             <div class="col-xs-12 col-md-5">
                 <div class="box box box-default">
-                  
+
                     <div class="box box-body">
                         <div class="form-group">
                             <label class="control-label col-md-4">Attendance Number</label>
                             <div class="col-md-8">
-                                @Html.EditorFor(model => model.AttendanceNmumber, new {htmlAttributes = new {@class = "form-control"}})
-                                @Html.ValidationMessageFor(model => model.AttendanceNmumber, "", new {@class = "text-danger"})
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="control-label col-md-4">First WoredaWoredaName</label>
-                            <div class="col-md-8">
-                                @Html.EditorFor(model => model.FirstWoredaName, new { htmlAttributes = new { @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.FirstWoredaName, "", new { @class = "text-danger" })
+                                @Html.EditorFor(model => model.AttendanceNmumber, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.AttendanceNmumber, "", new { @class = "text-danger" })
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-4">Middle WoredaWoredaName</label>
+                            <label class="control-label col-md-4">First Name</label>
                             <div class="col-md-8">
-                                @Html.EditorFor(model => model.FatherWoredaName, new { htmlAttributes = new { @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.FatherWoredaName, "", new { @class = "text-danger" })
+                                @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-4">Last WoredaWoredaName</label>
+                            <label class="control-label col-md-4">Middle Name</label>
                             <div class="col-md-8">
-                                @Html.EditorFor(model => model.GrandfatherWoredaName, new { htmlAttributes = new { @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.GrandfatherWoredaName, "", new { @class = "text-danger" })
+                                @Html.EditorFor(model => model.FatherName, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.FatherName, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-4">Last Name</label>
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.GrandfatherName, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.GrandfatherName, "", new { @class = "text-danger" })
                             </div>
                         </div>
 
@@ -53,10 +54,10 @@
                                 <input type="text" class="form-control pull-right datepicker">
                             </div>
 
-                         
+
                         </div>
-                     
-                      
+
+
 
                     </div>
                 </div>
@@ -66,7 +67,7 @@
             <div class="col-xs-10 col-md-6">
                 <div class="box box box-default">
 
-                  
+
                     <div class="box box-body">
                         @Html.AntiForgeryToken()
                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -94,31 +95,29 @@
                             </div>
                         </div>
 
-                       
-                 
-                      
 
-                        <div class="form-group">
-                            <label class="control-label col-md-4">Department</label>
-                            <div class="col-md-8">
+                     
+                        @*@(Html.Kendo().DropDownListFor(t => t.SchoolTypeId)
+                                      .Name("SchoolTypeId")
+                                      .DataTextField("Text")
+                                      .DataValueField("Value")
+                                      .Events(e =>
+                                       {
+                                           e.Select("onSelect");
+                                       })
+                                      .DataSource(source =>
+                                       {
+                                           source.Read(read =>
+                                           {
+                                               read.Action("GetSchoolTypeLookups", "SchoolInformation");
+                                           });
+                                       })
+                                      .OptionLabel("...Select School Type...")
+                                      .HtmlAttributes(new { style = "width: 292px", @required = "required" })
+                            )*@
 
-                                <select class="form-control" style="width: 100%;">
 
-                                    <option value="AZ">Arizona</option>
-                                    <option value="CO">Colorado</option>
-                                    <option value="ID">Idaho</option>
-                                    <option value="MT">Montana</option>
-                                    <option value="NE">Nebraska</option>
-                                    <option value="NM">New Mexico</option>
-                                    <option value="ND">North Dakota</option>
-                                    <option value="UT">Utah</option>
-                                    <option value="WY">Wyoming</option>
 
-                                </select>
-                                @*@Html.EditorFor(model => model.DivisionId, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.DivisionId, "", new { @class = "text-danger" })*@
-                            </div>
-                        </div>
 
 
                         <div class="form-group">
@@ -128,8 +127,8 @@
                                 @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
                             </div>
                         </div>
-                       
-                      
+
+
                         <div class="form-group">
                             <div class="col-md-offset-4 col-md-8">
                                 <input type="submit" value="Create" class="btn btn-default btn btn-primary" />

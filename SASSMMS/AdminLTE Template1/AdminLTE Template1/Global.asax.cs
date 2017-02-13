@@ -1,13 +1,16 @@
-﻿using System.Web;
+﻿using System.Security.Claims;
+using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using AdminLTE_Template1.App_Start;
-using SSWebUI;
+
+
+
 
 //using SSWebUI.SecurityManagement;
 
-namespace AdminLTE_Template1
+namespace SSWebUI
 {
     public class MvcApplication : HttpApplication
     {
@@ -17,6 +20,7 @@ namespace AdminLTE_Template1
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
+            AntiForgeryConfig.UniqueClaimTypeIdentifier = ClaimTypes.Email;
         }
     }
 }

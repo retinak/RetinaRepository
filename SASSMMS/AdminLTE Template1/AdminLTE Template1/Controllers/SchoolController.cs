@@ -1,21 +1,27 @@
 ﻿using System;
-using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
+using SASSMMS.ApplicationService.Services.Implementations;
+using SASSMMS.ApplicationService.Services.Interfaces;
 using SASSMMS.Domain.Entities;
-using SASSMMS.Repository;
 
 namespace SSWebUI.Controllers
-{
+{[Authorize]
     public class SchoolController : Controller
     {
-        private MainContext db = new MainContext();
+        //private MainContext db = new MainContext();
 
+        private readonly ISchoolService schoolService;
+
+        public SchoolController()
+        {
+            schoolService=new SchoolService();
+        }
         // GET: School
         public ActionResult Index()
         {
-            return View(db.Schools.ToList());
+            return View(schoolService.GetSchools().ToList());
         }
 
         // GET: School/Details/5
@@ -25,14 +31,18 @@ namespace SSWebUI.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            School school = db.Schools.Find(id);
+            var school = schoolService.GetSchool(id);
             if (school == null)
             {
                 return HttpNotFound();
             }
             return View(school);
         }
-
+        public JsonResult GetSchools()
+        {
+            var schools =schoolService.GetSchools();
+            return Json(schools.Select(t => new { Text = t.SchoolName, Value = t.SchoolId }), JsonRequestBehavior.AllowGet);
+        }
         // GET: School/Create
         public ActionResult Create()
         {
@@ -49,8 +59,8 @@ namespace SSWebUI.Controllers
             if (ModelState.IsValid)
             {
                 school.SchoolId = Guid.NewGuid();
-                db.Schools.Add(school);
-                db.SaveChanges();
+                schoolService.InsertSchool(school);
+               
                 return RedirectToAction("Index");
             }
 
@@ -64,7 +74,7 @@ namespace SSWebUI.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            School school = db.Schools.Find(id);
+            var school = schoolService.GetSchool(id);
             if (school == null)
             {
                 return HttpNotFound();
@@ -81,8 +91,9 @@ namespace SSWebUI.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(school).State = EntityState.Modified;
-                db.SaveChanges();
+                //db.Entry(school).State = EntityState.Modified;
+                schoolService.UpdateSchool(school);
+                //db.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(school);
@@ -95,7 +106,7 @@ namespace SSWebUI.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            School school = db.Schools.Find(id);
+            var school = schoolService.GetSchool(id);
             if (school == null)
             {
                 return HttpNotFound();
@@ -108,19 +119,16 @@ namespace SSWebUI.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(Guid id)
         {
-            School school = db.Schools.Find(id);
-            db.Schools.Remove(school);
-            db.SaveChanges();
+            schoolService.GetSchool(id);
+            //db.Schools.Remove(school);
+            //db.SaveChanges();
             return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)
         {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
+            schoolService.Dispose();
+           
         }
     }
 }
