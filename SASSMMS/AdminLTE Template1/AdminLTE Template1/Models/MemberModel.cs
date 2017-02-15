@@ -15,6 +15,7 @@ namespace SSWebUI.Models
         public Guid ParentId { get; set; }
   
         public string CurrentStatus { get; set; }
+        public virtual List<Occupation> Occupations { get; set; } 
      
         public string Company { get; set; }
         public Guid SchoolId { get; set; }
@@ -30,11 +31,18 @@ namespace SSWebUI.Models
         public  string ParentFullName { get; set; }
         public Guid DivisionId { get; set; }
         public string DivisionName { get; set; }
-        public Guid CategoryLevelId { get; set; }
+        public Guid CategoryLevelId { get;set; }
+      
         public string CategoryLevel { get; set; }
         public virtual  School School { get; set; }
         public Guid SubcityId { get; set; }
-       
+        public string HouseNo { get; set; }
+        public string City { get; set; }
+        public string HomePhone { get; set; }
+        public string OfficePhone { get; set; }
+        public string MobilePhone { get; set; }
+        public string PoBox { get; set; }
+        public  string SpecialAddress { get; set; }
         #endregion
 
         public  string FirstName { get; set; }

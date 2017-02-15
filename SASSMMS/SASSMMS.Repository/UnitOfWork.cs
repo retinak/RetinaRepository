@@ -19,6 +19,9 @@ namespace SASSMMS.Repository
         private GenericRepository<Region> regionRepository;
         private GenericRepository<Position> positionRepository;
         private GenericRepository<Status> statusRepository;
+        private GenericRepository<Occupation> occupationRepository;
+        
+         
 
         public GenericRepository<Status> StatusRepository
         {
@@ -42,6 +45,17 @@ namespace SASSMMS.Repository
             }
         }
 
+        public GenericRepository<Occupation> OccupationRepository
+        {
+            get
+            {
+                if (occupationRepository == null)
+                {
+                    occupationRepository=new GenericRepository<Occupation>(mainContext);
+                }
+                return occupationRepository;
+            }
+        } 
         public GenericRepository<Subcity> SubcityRepository
         {
             get

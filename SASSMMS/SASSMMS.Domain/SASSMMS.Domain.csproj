@@ -62,6 +62,7 @@
     <Compile Include="Entities\AppUser.cs" />
     <Compile Include="Entities\Category.cs" />
     <Compile Include="Entities\Comment.cs" />
+    <Compile Include="Entities\Occupation.cs" />
     <Compile Include="Entities\Parent.cs" />
     <Compile Include="Entities\PermanentMember.cs" />
     <Compile Include="Entities\Person.cs" />

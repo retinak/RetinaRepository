@@ -19,6 +19,5 @@ E:\MyRepo\SASSMMS\SASSMMS.Domain\bin\Debug\EntityFramework.xml
 E:\MyRepo\SASSMMS\SASSMMS.Domain\bin\Debug\EntityFramework.SqlServer.xml
 E:\MyRepo\SASSMMS\SASSMMS.Domain\bin\Debug\Microsoft.AspNet.Identity.Core.xml
 E:\MyRepo\SASSMMS\SASSMMS.Domain\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
-E:\MyRepo\SASSMMS\SASSMMS.Domain\obj\Debug\SASSMMS.Domain.csprojResolveAssemblyReference.cache
 E:\MyRepo\SASSMMS\SASSMMS.Domain\obj\Debug\SASSMMS.Domain.dll
 E:\MyRepo\SASSMMS\SASSMMS.Domain\obj\Debug\SASSMMS.Domain.pdb

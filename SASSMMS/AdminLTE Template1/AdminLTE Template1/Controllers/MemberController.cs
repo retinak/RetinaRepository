@@ -23,6 +23,7 @@ namespace SSWebUI.Controllers
         private readonly IRegionService regionService ;
         private readonly ISubcityService subcityService;
         private readonly IWoredaService woredaService;
+        private readonly IOccupationService occupationService;
         public MemberController()
         {
             memberService= new MemberService();
@@ -31,6 +32,7 @@ namespace SSWebUI.Controllers
             positionService = new PositionService();
             categoryService= new CategoryService();
             statusService=new StatusService();
+            occupationService=new OccupationService();
             regionService=new RegionService();
             subcityService=new SubcityService();
             woredaService = new WoredaService();
@@ -90,6 +92,13 @@ namespace SSWebUI.Controllers
         {
             var schools = schoolService.GetSchools();
             return Json(schools.Select(t => new { Text = t.SchoolName, Value = t.SchoolId }), JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult GetOccupations()
+        {
+            var occupations = occupationService.GetOccupations();
+            return Json(occupations.Select(n => new { OccupationName = n.OccupationName, OccupationId = n.OccupationId}),
+                JsonRequestBehavior.AllowGet);
         }
 
         public JsonResult GetWoredas(Guid id)
