@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace SASSMMS.Domain.Entities
 {/// <summary>
-/// This class is serve as lookup class that holds levels data (like, beginner, medium level , Adults) 
+/// This class  serves as lookup class that holds levels data (like, beginner, medium level , Adults) 
 /// </summary>
     public class Category
     {

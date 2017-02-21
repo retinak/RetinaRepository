@@ -1,5 +1,5 @@
-﻿@model SSWebUI.Models.BasicInformation
-
+﻿@model SSWebUI.Models.MemberModel
+@using Kendo.Mvc.UI
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
@@ -9,24 +9,9 @@
                 <div class="box box-body">
 
                     <div class="form-group">
-                        <label class="control-label col-md-4">Woreda</label>
-                        <div class="col-md-8">
-                            @*@Html.EditorFor(model => model.WoredaId, new {htmlAttributes = new {@class = "form-control"}})*@
-
-                            <select class="form-control" style="width:100%">
-
-                                <option selected="selected">Select Woreda</option>
-                                <option>Addis Ketema</option>
-                                <option>Bole </option>
-                                <option>Kolfe Keranio</option>
-                              
-                            </select>
-
-                        </div>
-                    </div>
-                    <div class="form-group">
                         <label class="control-label col-md-4">House Number</label>
                         <div class="col-md-8">
+                            @*@Html.Kendo().TextBox().Name("textbox").Value("Input")*@
                             @Html.EditorFor(model => model.HouseNo, new {htmlAttributes = new {@class = "form-control"}})
                         </div>
                     </div>
@@ -39,7 +24,13 @@
                     <div class="form-group">
                         <label class="control-label col-md-4">Home Phone</label>
                         <div class="col-md-8">
-                            @Html.EditorFor(model => model.HomePhone, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.EditorFor(model => model.HomePhone, new {htmlAttributes = new {@class = "form-control"}})
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-4">Mobile Number</label>
+                        <div class="col-md-8">
+                            @Html.EditorFor(model => model.MobilePhone, new {htmlAttributes = new {@class = "form-control"}})
                         </div>
                     </div>
                 </div>
@@ -49,33 +40,36 @@
                     <div class="form-group">
                         <label class="control-label col-md-4">Office Phone</label>
                         <div class="col-md-8">
-                            @Html.EditorFor(model => model.OfficePhone, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.EditorFor(model => model.OfficePhone, new {htmlAttributes = new {@class = "form-control"}})
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label class="control-label col-md-4">Mobile Number</label>
-                        <div class="col-md-8">
-                            @Html.EditorFor(model => model.MobilePhone, new {htmlAttributes = new {@class = "form-control"}})
-                        </div>
-                    </div>
+
 
                     <div class="form-group">
                         <label class="control-label col-md-4">P.O.Box</label>
                         <div class="col-md-8">
-                            @Html.EditorFor(model => model.PoBox, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.EditorFor(model => model.PoBox, new {htmlAttributes = new {@class = "form-control"}})
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-md-4">Special Address</label>
                         <div class="col-md-8">
-                            @Html.EditorFor(model => model.SpecialAddress, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.EditorFor(model => model.SpecialAddress, new {htmlAttributes = new {@class = "form-control"}})
                         </div>
                     </div>
-                   
+                    @*<div class="form-group">
+                        <div class="col-md-offset-4 col-md-8">
+                            <input type="submit" value="Create" class="btn btn-default btn btn-primary" />
+                        </div>
+
+               
+                    </div>*@
+                    <button type="submit" class="btn btn-success margin-btn-sm"><i class="glyphicon glyphicon-ok-circle"></i> Save</button>
 
                 </div>
             </div>
         </div>
+
     </div>
 
 }

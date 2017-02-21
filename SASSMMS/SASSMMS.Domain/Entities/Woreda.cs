@@ -7,7 +7,7 @@ namespace SASSMMS.Domain.Entities
     {
         public  Guid WoredaId { get; set; }
         public  Guid SubcityId { get; set; }
-        public  string Name { get; set; }
+        public  string WoredaName { get; set; }
         public  virtual  Subcity Subcity { get; set; }
 
         public virtual List<Address> Addresses { get; set; }

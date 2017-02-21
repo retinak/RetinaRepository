@@ -1,209 +1,275 @@
-﻿@model SSWebUI.Models.BasicInformation
+﻿@using Kendo.Mvc.UI
+@model SSWebUI.Models.MemberModel
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-}
 
-<div class="row">
-    <div class="form-horizontal">
-        <div class="col-xs-12 col-md-5">
-            <div class="box box box-default">
-              
-                <div class="box box-body">
-                    <div class="form-group">
-                        <label class="control-label col-md-4">School</label>
-                        <div class="col-md-8">
-                            <select class="form-control" style="width: 100%">
+    <div class="row">
+        <div class="form-horizontal">
+            <div class="col-xs-12 col-md-5">
+                <div class="box box box-default">
 
-                                <option selected="selected">Alabama</option>
-                                <option>Alaska</option>
-                                <option disabled="disabled">California (disabled)</option>
-                                <option>Delaware</option>
-                                <option>Tennessee</option>
-                                <option>Texas</option>
-                                <option>Washington</option>
-                            </select>
+                    <div class="box box-body">
+                        <div class="form-group">
+                            <label class="control-label col-md-4">School </label>
+                            <div class="col-md-8">
+                                @(Html.Kendo().DropDownListFor(t => t.SchoolId)
+                              .Name("SchoolId")
+                              .DataTextField("Text")
+                              .DataValueField("Value")
+                              //.Events(e => { e.Select("onSelect"); })
+                            
+                              .DataSource(source =>
+                              {
+                                  source.Read(read =>
+                                  {
+                                      read.Action("GetSchools", "Member");
+                                  });
+                              })
+                              .OptionLabel("--Select Schools--")
+                              .HtmlAttributes(new { style = "width: 100%", @required = "required" }))
+
+                                @*@Html.DropDownList("DivisionId", null, htmlAttributes: new { @class = "form-control" })*@
+
+                                @Html.ValidationMessageFor(model => model.DivisionId, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
 
 
+                        <div class="form-group">
+                            <label class="control-label col-md-4">Qualification </label>
+                            <div class="col-md-8">
+                                @(Html.Kendo().DropDownList()
+                              .Name("Qualification")
+                              .DataTextField("Text")
+                              .DataValueField("Value")
+                              //.Events(e => { e.Select("onSelect"); })
+                             
+                              .DataSource(source =>
+                              {
+                                  source.Read(read =>
+                                  {
+                                      read.Action("GetQualifications", "Member");
+                                  });
+                              })
+                             
+                              .HtmlAttributes(new { style = "width: 100%", @required = "required" }))
+
+                                @*@Html.DropDownList("DivisionId", null, htmlAttributes: new { @class = "form-control" })*@
+
+                                @Html.ValidationMessageFor(model => model.DivisionId, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-4">Position </label>
+                            <div class="col-md-8">
+                                @(Html.Kendo().DropDownListFor(t => t.PositionId)
+                              .Name("PositionId")
+                              .DataTextField("Text")
+                              .DataValueField("Value")
+                              .DataSource(source =>
+                              {
+                                  source.Read(read =>
+                                  {
+                                      read.Action("GetPositions", "Member");
+                                  });
+                              })
+                              .OptionLabel("--Select Positions--")
+                              .HtmlAttributes(new { style = "width: 100%", @required = "required" }))
+
+                                @*@Html.DropDownList("DivisionId", null, htmlAttributes: new { @class = "form-control" })*@
+
+                                @Html.ValidationMessageFor(model => model.PositionId, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="control-label col-md-4">Category</label>
+                            <div class="col-md-8">
+                                @(Html.Kendo().DropDownListFor(t => t.CategoryLevelId)
+                              .Name("CategoryLevelId")
+                              .DataTextField("Text")
+                              .DataValueField("Value")
+                              .DataSource(source =>
+                              {
+                                  source.Read(read =>
+                                  {
+                                      read.Action("GetCategories", "Member");
+                                  });
+                              }).OptionLabel("-- Select Categories---")
+                              .HtmlAttributes(new { style = "width :100%", @required = "required" }))
+                                @Html.ValidationMessageFor(model => model.CategoryLevelId, "", new { @class = "text-danger" })
+
+
+
+                            </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label class="control-label col-md-4">Qualification </label>
-                        <div class="col-md-8">
-                            <select class="form-control" style="width: 100%">
 
-                                <option selected="selected">Alabama</option>
-                                <option>Alaska</option>
-                                <option disabled="disabled">California (disabled)</option>
-                                <option>Delaware</option>
-                                <option>Tennessee</option>
-                                <option>Texas</option>
-                                <option>Washington</option>
-                            </select>
-
-
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="control-label col-md-4">Position</label>
-                        <div class="col-md-8">
-                            <select class="form-control" style="width: 100%">
-
-                                <option selected="selected">Alabama</option>
-                                <option>Alaska</option>
-                                <option disabled="disabled">California (disabled)</option>
-                                <option>Delaware</option>
-                                <option>Tennessee</option>
-                                <option>Texas</option>
-                                <option>Washington</option>
-                            </select>
-
-
-                        </div>
-                    </div>
-
-
-                    <div class="form-group">
-                        <label class="control-label col-md-4">Category</label>
-                        <div class="col-md-8">
-                            <select class="form-control" style="width: 100%">
-
-                                <option selected="selected">Alabama</option>
-                                <option>Alaska</option>
-                                <option disabled="disabled">California (disabled)</option>
-                                <option>Delaware</option>
-                                <option>Tennessee</option>
-                                <option>Texas</option>
-                                <option>Washington</option>
-                            </select>
-
-
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-md-4">Company</label>
-                        <div class="col-md-8">
-                            <select class="form-control" style="width:100%">
-
-                                <option selected="selected">Alabama</option>
-                                <option>Alaska</option>
-                                <option disabled="disabled">California (disabled)</option>
-                                <option>Delaware</option>
-                                <option>Tennessee</option>
-                                <option>Texas</option>
-                                <option>Washington</option>
-                            </select>
-
-
-                        </div>
-                    </div>
 
                 </div>
             </div>
-        </div>
+
+            <div class="col-xs-10 col-md-6">
+                <div class="box box box-default">
 
 
-        <div class="col-xs-10 col-md-6">
-            <div class="box box box-default">
+                    <div class="box box-body">
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            <label class="control-label col-md-4">Status</label>
+                            <div class="col-md-8">
+                                @(Html.Kendo().DropDownListFor(t => t.StatusId)
+                              .Name("StatusId")
+                              .DataTextField("Text")
+                              .DataValueField("Value")
+                              .DataSource(source =>
+                              {
+                                  source.Read(read =>
+                                  {
+                                      read.Action("GetStatuses", "Member");
+                                  });
+                              }).OptionLabel("-- Select Statuses---")
+                              .HtmlAttributes(new { style = "width :80%", @required = "required" }))
+                                @Html.ValidationMessageFor(model => model.StatusId, "", new { @class = "text-danger" })
 
-               
-                <div class="box box-body">
-                    @Html.AntiForgeryToken()
-                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                    <div class="form-group">
-                        <label class="control-label col-md-4">Status</label>
-                        <div class="col-md-8">
-                            <select class="form-control" style="width: 100%">
 
-                                <option selected="selected">Alabama</option>
-                                <option>Alaska</option>
-                                <option disabled="disabled">California (disabled)</option>
-                                <option>Delaware</option>
-                                <option>Tennessee</option>
-                                <option>Texas</option>
-                                <option>Washington</option>
-                            </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-4">Region</label>
+                            <div class="col-md-8">
+
+                                @(Html.Kendo().DropDownList()
+                                              .Name("Regions")
+                                              .HtmlAttributes(new { style = "width:80%" })
+                                              .OptionLabel("Select Regions...")
+                                              .DataTextField("RegionName")
+                                              .DataValueField("RegionId")
+                                              .DataSource(source =>
+                                              {
+                                                  source.Read(read =>
+                                                  {
+                                                      read.Action("GetRegions", "Member");
+                                                  });
+                                              })
+                                )
+                               
+                            </div>
+                        </div>
 
 
+                        <div class="form-group">
+                            <label class="control-label col-md-4">Subcity</label>
+                            <div class="col-md-8">
+                                @(Html.Kendo().DropDownList()
+                                  .Name("Subcities")
+                                  .HtmlAttributes(new { style = "width:80%" })
+                                  .OptionLabel("Select Subcities...")
+                                  .DataTextField("SubcityName")
+                                  .DataValueField("SubcityId")
+                                  .DataSource(source =>
+                                      {
+                                          source.Read(read =>
+                                          {
+                                              read.Action("GetSubcities", "Member")
+                                                  .Data("filterSubcities");
+                                          })
+                                          .ServerFiltering(true);
+                                      })
+                                      .Enable(false)
+                                      .AutoBind(false)
+                                      .CascadeFrom("Regions")
+                                )
+                                <script>
+                                    function filterSubcities() {
+                                        return {
+                                            id: $("#Regions").val()
+                                        };
+                                    }
+                                </script>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-4">Woreda</label>
+                            <div class="col-md-8">
+                                @(Html.Kendo().DropDownListFor(t=>t.WoredaId)
+                                  .Name("Woredas")
+                                  
+                                  .HtmlAttributes(new { style = "width:80%" })
+                                  .OptionLabel("Select Woredas...")
+                                  .DataTextField("Text")
+                                  .DataValueField("Value")
+                                  .DataSource(source =>
+                                      {
+                                          source.Read(read =>
+                                          {
+                                              read.Action("GetWoredas", "Member")
+                                                  .Data("filterSubcities");
+                                          })
+                                          .ServerFiltering(true);
+                                      })
+                                      .Enable(false)
+                                      .AutoBind(false)
+                                      .CascadeFrom("Subcities")
+                                )
+                                <script>
+                                    function filterSubcities() {
+                                        return {
+                                            id: $("#Subcities").val()
+                                        };
+                                    }
+                                </script>
+
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="control-label col-md-4">Ocupation </label>
+                            <div class="col-md-8">
+                               
+                                @(Html.Kendo().DropDownList()
+                                              .Name("Occupations")
+                                              .HtmlAttributes(new { style = "width:80%" })
+                                              .OptionLabel("Select Occupations...")
+                                              .DataTextField("OccupationName")
+                                              .DataValueField("OccupationId")
+                                              .DataSource(source =>
+                                              {
+                                                  source.Read(read =>
+                                                  {
+                                                      read.Action("GetOccupations", "Member");
+                                                  });
+                                              })
+                                )
+                                @*@Html.EditorFor(model => model.Occupation, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Occupation, "", new { @class = "text-danger" })*@
+                            </div>
                         </div>
                     </div>
+                    <div class="col-xs-2"></div>
 
-                    <div class="form-group">
-                        <label class="control-label col-md-4">Region</label>
-                        <div class="col-md-8">
-                            <select class="form-control" style="width: 100%">
-
-                                <option selected="selected">Alabama</option>
-                                <option>Alaska</option>
-                                <option disabled="disabled">California (disabled)</option>
-                                <option>Delaware</option>
-                                <option>Tennessee</option>
-                                <option>Texas</option>
-                                <option>Washington</option>
-                            </select>
-
-
-                        </div>
-                    </div>
-
-
-                    <div class="form-group">
-                        <label class="control-label col-md-4">Subcity</label>
-                        <div class="col-md-8">
-                            <select class="form-control" style="width: 100%">
-
-                                <option selected="selected">Alabama</option>
-                                <option>Alaska</option>
-                                <option disabled="disabled">California (disabled)</option>
-                                <option>Delaware</option>
-                                <option>Tennessee</option>
-                                <option>Texas</option>
-                                <option>Washington</option>
-                            </select>
-
-
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-md-4">Woreda</label>
-                        <div class="col-md-8">
-                            <select class="form-control" style="width: 100%">
-
-                                <option selected="selected">Alabama</option>
-                                <option>Alaska</option>
-                                <option disabled="disabled">California (disabled)</option>
-                                <option>Delaware</option>
-                                <option>Tennessee</option>
-                                <option>Texas</option>
-                                <option>Washington</option>
-                            </select>
-
-
-                        </div>
-                    </div>
-
-                
-                    <div class="form-group">
-                        <label class="control-label col-md-4">Ocupation </label>
-                        <div class="col-md-8">
-                            <select class="form-control" style="width :100%">
-                                <option>Alaska</option>
-                                <option>California</option>
-                                <option>Delaware</option>
-                                <option>Tennessee</option>
-                                <option>Texas</option>
-                                <option>Washington</option>
-                            </select>
-
-                            @*@Html.EditorFor(model => model.Occupation, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Occupation, "", new { @class = "text-danger" })*@
-                        </div>
-                    </div>
                 </div>
-                <div class="col-xs-2"></div>
-
             </div>
         </div>
     </div>
-</div>
+
+    @*<script>
+            window.regionId = 0;
+            function onSelect(e) {
+
+                var dataItem = this.dataItem(e.item);
+                console.log(e);
+                alert(dataItem);
+
+                //window.regionId=Id;
+                //kendoConsole.log("event :: select (" + dataItem.Text + " : " + dataItem.Value + ")");
+            }
+        </script>*@
+
+}

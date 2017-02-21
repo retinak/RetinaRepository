@@ -1,4 +1,4 @@
-﻿@model SSWebUI.Models.BasicInformation
+﻿@model SSWebUI.Models.MemberModel
 @{
     ViewBag.Title = "Member Profile";
 }
@@ -11,6 +11,7 @@
     <div class="container pull-md">
 
         @*@Html.Partial("Message")*@
+
 
         <div role="tabpanel">
 
@@ -25,7 +26,7 @@
             <!-- Tab panes -->
             @using (Html.BeginForm("Create", "Member", FormMethod.Post, new { role = "form" }))
             {
-                @Html.ValidationSummary()
+                @*@Html.ValidationSummary()*@
                 @Html.AntiForgeryToken()
                 <div class="tab-content">
                     <div role="tabpanel" class="tab-pane fade in active" id="general">@Html.Partial("Shared/_BasicInfoView",Model)</div>

@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Linq.Expressions;
 using SASSMMS.ApplicationService.Services.Interfaces;
 using SASSMMS.Domain.Entities;
 using SASSMMS.Repository;
@@ -17,21 +16,46 @@ namespace SASSMMS.ApplicationService.Services.Implementations
         {
             unitOfWork=new UnitOfWork();
         }
-        public bool InsertDivision(Region division)
+        public bool InsertDivision(Division division)
         {
-           unitOfWork.RegionRepository.Insert(division);
+           unitOfWork.DivisionRepository.Insert(division);
            return unitOfWork.Save();
         }
 
-        public bool UpdateDivision(Region division)
+        public bool UpdateDivision(Division division)
         {
-            unitOfWork.RegionRepository.Update(division);
+            unitOfWork.DivisionRepository.Update(division);
             return unitOfWork.Save();
         }
-
-        public List<Region> GetDivisions()
+        
+        public bool DeleteDivision(Division division)
         {
-            return unitOfWork.RegionRepository.GetAll().ToList();
+            unitOfWork.DivisionRepository.Delete(division);
+            return unitOfWork.Save();
+
+        }
+
+        public List<Division> GetDivisions()
+        {
+
+            return unitOfWork.DivisionRepository.GetAll().ToList();
+        }
+
+
+        public Division FindById(Guid? Id)
+        {
+            return unitOfWork.DivisionRepository.GetById(Id);
+
+        }
+
+        public IEnumerable<Division> Get(Expression<Func<Division, bool>> filter = null, Func<IQueryable<Division>, IOrderedQueryable<Division>> orderBy = null, string includeProperties = "")
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Dispose()
+        {
+            unitOfWork.Dispose();
         }
     }
 }

@@ -16,6 +16,7 @@ namespace SASSMMS.Domain.Entities
         public string Company { get; set; }
         public Guid SchoolId { get; set; }
 
+
         #region Navigation 
         public virtual School School { get; set; }
         public virtual List<Qualification> Qualifications { get; set; }
@@ -24,6 +25,8 @@ namespace SASSMMS.Domain.Entities
         public Guid DivisionId { get; set; }
         public  virtual  Division Division { get; set; }
         public Guid CategoryLevelId { get; set; }
+      public List<Occupation> Occupations { get; set; } 
+       
         public virtual Category CategoryLevel { get; set; }
 
         public virtual List<Status> Statuses { get; set; }

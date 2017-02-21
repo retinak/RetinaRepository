@@ -1,0 +1,32 @@
+﻿@model SSWebUI.Models.WoredaViewModel
+@{
+    ViewBag.Title = "Details";
+}
+
+
+<div>
+    <h4>Woreda</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Subcity.SubcityName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Subcity.SubcityName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WoredaName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WoredaName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.WoredaId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

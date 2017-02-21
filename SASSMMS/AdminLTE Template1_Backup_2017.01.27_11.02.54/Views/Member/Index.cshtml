@@ -1,0 +1,143 @@
+﻿@model IEnumerable<SSWebUI.Models.MemberModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<p>
+    @Html.ActionLink("Create New", "SaveMember")
+</p>
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.DisplayName("Attendance Number")
+            @Html.DisplayNameFor(model => model.AttendanceNmumber)
+        </th>
+
+        <th>
+            @Html.DisplayName("Status")
+            @Html.DisplayNameFor(model => model.CurrentStatus)
+        </th>
+        <th>
+            @Html.DisplayName("Organization")
+            @Html.DisplayNameFor(model => model.Company)
+        </th>
+
+
+        
+        <th>
+            @Html.DisplayName("School")
+            @Html.DisplayNameFor(model => model.SchoolName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ParentFullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DivisionId)
+        </th>
+        <th>
+            @Html.DisplayName("Department")
+            @Html.DisplayNameFor(model => model.DivisionName)
+        </th>
+
+        <th>
+            @Html.DisplayName("Category")
+            @Html.DisplayNameFor(model => model.CategoryLevel)
+        </th>
+        <th>
+            @Html.DisplayName("First Name")
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayName("Father Name")
+            @Html.DisplayNameFor(model => model.FatherName)
+        </th>
+        <th>
+            @Html.DisplayName("Grand Father")
+            @Html.DisplayNameFor(model => model.GrandfatherName)
+        </th>
+        <th>
+            @Html.DisplayName("DOB")
+            @Html.DisplayNameFor(model => model.DateOfBirth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+       
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.AttendanceNmumber)
+        </td>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.CurrentStatus)
+        </td>
+        <td>
+            @Html.DisplayName("Organization")
+            @Html.DisplayFor(modelItem => item.Company)
+        </td>
+        <td>
+            @Html.HiddenFor(modelItem =>item.SchoolId)
+            @Html.DisplayFor(modelItem => item.SchoolId)
+        </td>
+        <td>
+            @Html.HiddenFor(modelItem => item.StatusId)
+            @Html.DisplayFor(modelItem => item.StatusId)
+        </td>
+        <td>
+            @Html.HiddenFor(modelItem => item.StatusName)
+            @Html.DisplayFor(modelItem => item.StatusName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SchoolName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ParentFullName)
+        </td>
+        <td>
+            @Html.HiddenFor(modelItem => item.DivisionId)
+            @Html.DisplayFor(modelItem => item.DivisionId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DivisionName)
+        </td>
+        <td>
+            @Html.HiddenFor(modelItem => item.CategoryLevelId)
+            @Html.DisplayFor(modelItem => item.CategoryLevelId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CategoryLevel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FatherName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GrandfatherName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateOfBirth)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Occupation)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new {  id=item.MemberId}) |
+            @Html.ActionLink("Details", "Details", new { id = item.MemberId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.MemberId })
+        </td>
+    </tr>
+}
+
+</table>

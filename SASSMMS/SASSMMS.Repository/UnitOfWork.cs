@@ -6,79 +6,144 @@ namespace SASSMMS.Repository
 {
     public class UnitOfWork :  IDisposable
     {
-        private MainContext simsContext = new MainContext();
+        private readonly MainContext mainContext = new MainContext();
        
-        #region Curriculum Module Repository
+        #region Registration Module
         private GenericRepository<Division> divisionRepository;
-        private GenericRepository<Category> categoryLevelRepository;
+        private GenericRepository<Category> categoryRepository;
         private GenericRepository<Member> memberRepository;
-      
-        private GenericRepository<Applicant> applicantRepository;
+        private GenericRepository<Subcity> subcityRepository;
+        private GenericRepository<Woreda> woredaRepository;
+        private GenericRepository<School> schoolRepository;
+        private GenericRepository<Qualification> qualificationRepository; 
         private GenericRepository<Region> regionRepository;
+        private GenericRepository<Position> positionRepository;
+        private GenericRepository<Status> statusRepository;
+        private GenericRepository<Occupation> occupationRepository;
+        
+         
 
+        public GenericRepository<Status> StatusRepository
+        {
+            get {
+                if (statusRepository == null)
+                {
+                    statusRepository = new GenericRepository<Status>(mainContext);
+                }
+                return statusRepository;
+            }
+        } 
+        public GenericRepository<Woreda> WoredaRepository
+        {
+            get
+            {
+                if (woredaRepository == null)
+                {
+                    woredaRepository=new GenericRepository<Woreda>(mainContext);
+                }
+                return woredaRepository;
+            }
+        }
+
+        public GenericRepository<Occupation> OccupationRepository
+        {
+            get
+            {
+                if (occupationRepository == null)
+                {
+                    occupationRepository=new GenericRepository<Occupation>(mainContext);
+                }
+                return occupationRepository;
+            }
+        } 
+        public GenericRepository<Subcity> SubcityRepository
+        {
+            get
+            {
+                if (subcityRepository == null)
+                {
+                    subcityRepository=new GenericRepository<Subcity>(mainContext);
+                }
+                return subcityRepository;
+            }
+        }
+
+        public GenericRepository<Position> PositionRepository
+        {
+            get {
+                if (positionRepository == null)
+                {
+                    positionRepository=new GenericRepository<Position>(mainContext);
+                }
+                return positionRepository;
+            }
+        } 
+        public GenericRepository<Qualification> QualificationRepository
+        {
+            get { if( qualificationRepository==null)
+                {
+                    qualificationRepository=new GenericRepository<Qualification>(mainContext);
+                }
+                return qualificationRepository;
+            }
+        } 
+        public GenericRepository<School> SchoolRepository
+        {
+            get
+            {
+                if (schoolRepository == null)
+                {
+                    schoolRepository=new GenericRepository<School>(mainContext);
+                }
+                return schoolRepository;
+            }
+        } 
         public GenericRepository<Region> RegionRepository
         {
             get
             {
-                if (this.regionRepository == null)
+                if (regionRepository == null)
                 {
-                    this.regionRepository = new GenericRepository<Region>(simsContext);
+                    regionRepository = new GenericRepository<Region>(mainContext);
                 }
                 return regionRepository;
             }
         }
 
-        public GenericRepository<Applicant> ApplicantRepository
+        public GenericRepository<Member> MemberRepository
         {
-            get
-            {
-                if (this.applicantRepository == null)
-                {
-                    this.applicantRepository = new GenericRepository<Applicant>(simsContext);
-                }
-                return applicantRepository;
-            }
-        }
+            get { return memberRepository ?? (memberRepository = new GenericRepository<Member>(mainContext)); }
+        } 
         public GenericRepository<Division> DivisionRepository
         {
             get
             {
-                if (this.divisionRepository == null)
+                if (divisionRepository == null)
                 {
-                    this.divisionRepository = new GenericRepository<Division>(simsContext);
+                    divisionRepository = new GenericRepository<Division>(mainContext);
                 }
                 return divisionRepository;
             }
         }
-        public GenericRepository<Category> CategoryLevelReporitory
+        public GenericRepository<Category> CategoryRepository
         {
             get
             {
-                if (this.categoryLevelRepository == null)
+                if (categoryRepository == null)
                 {
-                    this.categoryLevelRepository = new GenericRepository<Category>(simsContext);
+                    categoryRepository = new GenericRepository<Category>(mainContext);
                 }
-                return categoryLevelRepository;
+                return categoryRepository;
             }
         }
-        public GenericRepository<Member> MemberReporitory
-        {
-            get
-            {
-                if (this.memberRepository == null)
-                {
-                    this.memberRepository = new GenericRepository<Member>(simsContext);
-                }
-                return memberRepository;
-            }
-        }
+       
         //public GenericRepository<Receive> ReceiveReporitory
         //{
         //    get
         //    {
         //        if (this.receiveRepository == null)
         //        {
-        //            this.receiveRepository = new GenericRepository<Receive>(simsContext);
+        //            this.receiveRepository = new GenericRepository<Receive>(mainContext);
         //        }
         //        return receiveRepository;
         //    }
@@ -89,7 +154,7 @@ namespace SASSMMS.Repository
         //    {
         //        if (this.salesRepository == null)
         //        {
-        //            this.salesRepository = new GenericRepository<Sales>(simsContext);
+        //            this.salesRepository = new GenericRepository<Sales>(mainContext);
         //        }
         //        return salesRepository;
         //    }
@@ -100,7 +165,7 @@ namespace SASSMMS.Repository
         //    {
         //        if (this.salesDetailRepository == null)
         //        {
-        //            this.salesDetailRepository = new GenericRepository<SalesDetail>(simsContext);
+        //            this.salesDetailRepository = new GenericRepository<SalesDetail>(mainContext);
         //        }
         //        return salesDetailRepository;
         //    }
@@ -111,7 +176,7 @@ namespace SASSMMS.Repository
         //    {
         //        if (this.receivedDetailRepository == null)
         //        {
-        //            this.receivedDetailRepository = new GenericRepository<ReceiveDetail>(simsContext);
+        //            this.receivedDetailRepository = new GenericRepository<ReceiveDetail>(mainContext);
         //        }
         //        return receivedDetailRepository;
         //    }
@@ -122,7 +187,7 @@ namespace SASSMMS.Repository
         //    {
         //        if (this.bjncardRepository == null)
         //        {
-        //            this.bjncardRepository = new GenericRepository<BinCard>(simsContext);
+        //            this.bjncardRepository = new GenericRepository<BinCard>(mainContext);
         //        }
         //        return bjncardRepository;
         //    }
@@ -131,25 +196,24 @@ namespace SASSMMS.Repository
 
         public bool Save()
         {
-            int saveStatus = simsContext.SaveChanges();
+            int saveStatus = mainContext.SaveChanges();
             if (saveStatus > 0)
                 return true;
-            else
-                return false;
+            return false;
         }
 
         private bool disposed = false;
 
         protected virtual void Dispose(bool disposing)
         {
-            if (!this.disposed)
+            if (!disposed)
             {
                 if (disposing)
                 {
-                    simsContext.Dispose();
+                    mainContext.Dispose();
                 }
             }
-            this.disposed = true;
+            disposed = true;
         }
 
         public void Dispose()

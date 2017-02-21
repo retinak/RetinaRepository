@@ -49,7 +49,7 @@ namespace SASSMMS.Repository
         {
             return dbSet.ToList();
         }
-        public virtual TEntity GetByID(object id)
+        public virtual TEntity GetById(object id)
         {
             return dbSet.Find(id);
         }
@@ -75,15 +75,15 @@ namespace SASSMMS.Repository
         {
             dbSet.AddRange(entities);
         }
-        public virtual void Delete(object id)
-        {
-            TEntity entityToDelete = dbSet.Find(id);
-            Delete(entityToDelete);
-        }
+        //public virtual void Delete(object id)
+        //{
+        //    TEntity entityToDelete = dbSet.Find(id);
+        //    Delete(entityToDelete);
+        //}
 
         public virtual void Delete(TEntity entityToDelete)
         {
-            if (ObjiSIMSContextInternal.Entry(entityToDelete).State == System.Data.Entity.EntityState.Detached)
+            if (ObjiSIMSContextInternal.Entry(entityToDelete).State == EntityState.Detached)
             {
                 dbSet.Attach(entityToDelete);
             }

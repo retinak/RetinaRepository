@@ -1,10 +1,12 @@
 ﻿using System.Data.Entity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using SASSMMS.Domain.Entities;
 using SASSMMS.Repository.EntityConfiguration;
 
+
 namespace SASSMMS.Repository
 {
-   public class MainContext :DbContext
+   public class MainContext : DbContext 
     {
         public MainContext()
             : base("SASSMSContext")
@@ -17,6 +19,7 @@ namespace SASSMMS.Repository
         public DbSet<Division> Divisions { get; set; }
         public DbSet<Comment> Comments { get; set; } 
         public DbSet<Member> Members { get; set; }
+        public DbSet<Occupation> Occupations { get; set; }
         public DbSet<Region> Regions { get; set; }
         public DbSet<Address> Addresses { get; set; } 
         public DbSet<Woreda> Woredas { get; set; } 
@@ -29,6 +32,7 @@ namespace SASSMMS.Repository
         public DbSet<Position> Positions { get; set; }
         public DbSet<Qualification> Qualifications { get; set; }
         public DbSet<Status> Status { get; set; }
+        //public DbSet<AppUser> AppUsers { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
