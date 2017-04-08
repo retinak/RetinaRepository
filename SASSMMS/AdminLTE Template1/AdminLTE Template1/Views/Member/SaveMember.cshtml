@@ -1,4 +1,4 @@
-﻿@model SSWebUI.Models.BasicInformation
+﻿@model SSWebUI.Models.MemberModel
 @{
     ViewBag.Title = "Member Profile";
 }
@@ -11,6 +11,7 @@
     <div class="container pull-md">
 
         @*@Html.Partial("Message")*@
+
 
         <div role="tabpanel">
 
@@ -34,7 +35,7 @@
 
 
                 </div>
-                <button type="submit" class="btn btn-success margin-btn-sm"><i class="glyphicon glyphicon-ok-circle"></i> Save</button>
+                @*<button type="submit" class="btn btn-success margin-btn-sm"><i class="glyphicon glyphicon-ok-circle"></i> Save</button>*@
                 @*<a href="@Url.Action("Index")" class="btn btn-default"><i class="glyphicon glyphicon-list"></i> Back to List</a>
                 <a href="javascript: location.reload(true);" class="btn btn-default"><i class="glyphicon glyphicon-trash"></i> Clear</a>*@
             }

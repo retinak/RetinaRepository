@@ -1,0 +1,59 @@
+﻿<aside class="main-sidebar">
+    <section class="sidebar">
+        @* BEGIN Search *@
+        <form action="#" method="get" class="sidebar-form">
+            <div class="input-group">
+                <input type="text" name="q" class="form-control" placeholder="Search...">
+                <span class="input-group-btn">
+                    <button type="submit" name="search" id="search-btn" class="btn btn-flat">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </span>
+            </div>
+        </form>
+        @* END Search *@
+        @* BEGIN Menu *@
+        <ul class="sidebar-menu">
+            @*<li class="header">HEADER</li>
+            <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
+            <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>*@
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-link"></i> <span>Settings</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li> <a href="@Url.Action("Index","Division")"><i class="glyphicon glyphicon-picture"></i>Division</a></li>
+                    <li><a href="@Url.Action("Index", "Region")">Region</a>"</li>
+                    <li><a href="@Url.Action("Index", "Subcity")">Subcity</a>"</li>
+                    <li><a href="@Url.Action("Index", "Woreda")">Woreda</a>"</li>
+                    <li><a href="@Url.Action("Index", "School")">School</a></li>
+                    <li><a href="@Url.Action("Index", "Position")">Position</a></li>
+                    <li><a href="@Url.Action("Index", "Qualifications")">Qualification</a></li>
+                    <li><a href="@Url.Action("Index","Status")">Status</a></li>
+                   
+                    <li><a href="@Url.Action("Index","Categories")">Category</a></li>
+                    @*<li><a href="@Url.Action("Create", "Division")"> Member</a></li>*@
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-link"></i> <span>Activities</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li> <a href="@Url.Action("Index","Parent")">Parent</a></li>
+                    @*<li><a href="@Url.Action("Create","Division")">Department </a>"></li>*@
+                    <li><a href="@Url.Action("Index", "Member")">Member</a>"</li>
+             
+                   
+                </ul>
+            </li>
+        </ul>
+        @* END Menu *@
+    </section>
+</aside>

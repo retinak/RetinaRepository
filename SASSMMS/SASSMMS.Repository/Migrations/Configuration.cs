@@ -10,7 +10,6 @@ namespace SASSMMS.Repository.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
-            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(SASSMMS.Repository.MainContext context)

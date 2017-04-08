@@ -8,7 +8,7 @@ namespace SASSMMS.Domain.Entities
     public  class Qualification
     {
         public  Guid QualificationId { get; set; }
-        [DisplayName("Qualification Name")]
+        [DisplayName("Qualification WoredaName")]
         public string QualificationName { get; set; }
         public virtual List<Member> Members { get; set; }
     }

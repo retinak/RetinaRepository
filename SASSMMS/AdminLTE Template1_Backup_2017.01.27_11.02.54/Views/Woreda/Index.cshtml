@@ -1,0 +1,39 @@
+﻿@model IEnumerable<SSWebUI.Models.WoredaViewModel>
+
+@{
+    ViewBag.Title = "Woredas";
+}
+
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SubcityName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WoredaName)
+        </th>
+      
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubcityName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WoredaName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.WoredaId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.WoredaId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.WoredaId })
+        </td>
+    </tr>
+}
+
+</table>

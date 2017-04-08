@@ -2,15 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 using SASSMMS.ApplicationService.Services.Interfaces;
 using SASSMMS.Domain.Entities;
 using SASSMMS.Repository;
 
 namespace SASSMMS.ApplicationService.Services.Implementations
 {
-    class RegionService :IRegionService
+    public class RegionService :IRegionService
     {
         private UnitOfWork unitOfWork;
         public RegionService()
@@ -27,37 +25,41 @@ namespace SASSMMS.ApplicationService.Services.Implementations
 
         public bool Edit(Region entity)
         {
-            throw new NotImplementedException();
+            unitOfWork.RegionRepository.Update(entity);
+            return unitOfWork.Save();
         }
 
         public bool Delete(Region entity)
         {
-            throw new NotImplementedException();
+            unitOfWork.RegionRepository.Delete(entity);
+            return unitOfWork.Save();
         }
 
         public List<Region> FindBy(Expression<Func<Region, bool>> predicate)
         {
-            throw new NotImplementedException();
+            return unitOfWork.RegionRepository.Get(predicate).ToList();
         }
-
-        public Region FindById(int Id)
+        
+        public Region FindById(Guid? Id)
         {
-            throw new NotImplementedException();
+            return unitOfWork.RegionRepository.GetById(Id);
         }
 
-        public Region FindById(Guid Id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Region> Get(Expression<Func<Region, bool>> filter = null, Func<IQueryable<Region>, IOrderedQueryable<Region>> orderBy = null, string includeProperties = "")
+        public IEnumerable<Region> Get(Expression<Func<Region, bool>> filter = null, 
+            Func<IQueryable<Region>, IOrderedQueryable<Region>> orderBy = null, string includeProperties = "")
         {
             throw new NotImplementedException();
         }
 
         public List<Region> GetAll()
         {
-            throw new NotImplementedException();
+            return unitOfWork.RegionRepository.GetAll().ToList();
+        }
+
+
+        public void Dispose()
+        {
+           unitOfWork.Dispose();
         }
     }
 }

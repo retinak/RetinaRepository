@@ -1,37 +1,48 @@
 ﻿using SASSMMS.Domain.Entities;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace SSWebUI.Models
 {
     public class MemberModel
     {
-        public Guid MemberId { get; set; }
 
+        public Guid MemberId { get; set; }
+      
         public string AttendanceNmumber { get; set; }
 
         //public  Guid SubDivisionId { get; set; }
         public Guid ParentId { get; set; }
+  
         public string CurrentStatus { get; set; }
+        public virtual List<Occupation> Occupations { get; set; } 
+     
         public string Company { get; set; }
         public Guid SchoolId { get; set; }
-
+        public Guid StatusId { get; set; }
+        public  string StatusName { get; set; }
         #region Navigation 
-        public virtual School School { get; set; }
+        public  Guid PositionId { get; set; }
+        public Guid RegionId { get; set; }
+        public string SchoolName { get; set; }
+        public  Guid QualificationId { get; set; }
         public virtual List<Qualification> Qualifications { get; set; }
         public virtual List<Position> Positions { get; set; }
-        public virtual Parent Parent { get; set; }
+        public  string ParentFullName { get; set; }
         public Guid DivisionId { get; set; }
-        public virtual Division Division { get; set; }
-        public Guid CategoryLevelId { get; set; }
-        public virtual Category CategoryLevel { get; set; }
-
-        public virtual List<Status> Statuses { get; set; }
-
-        public virtual List<Address> Addresses { get; set; }
-        //public virtual List<Division> Divisions { get; set; }// can a member be in Division and at the same time in sub division?
+        public string DivisionName { get; set; }
+        public Guid CategoryLevelId { get;set; }
+      
+        public string CategoryLevel { get; set; }
+        public virtual  School School { get; set; }
+        public Guid SubcityId { get; set; }
+        public string HouseNo { get; set; }
+        public string City { get; set; }
+        public string HomePhone { get; set; }
+        public string OfficePhone { get; set; }
+        public string MobilePhone { get; set; }
+        public string PoBox { get; set; }
+        public  string SpecialAddress { get; set; }
         #endregion
 
         public  string FirstName { get; set; }

@@ -1,0 +1,34 @@
+﻿@model SSWebUI.Models.SubcityViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+
+<div>
+    <h4>Subcity</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Region.RegionName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Region.RegionName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubcityName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubcityName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SubcityId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
