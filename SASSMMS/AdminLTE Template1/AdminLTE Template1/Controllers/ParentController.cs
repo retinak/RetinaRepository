@@ -1,13 +1,54 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Collections.Generic;
+using System.Web.Mvc;
+using SASSMMS.ApplicationService.Services.Interfaces;
+using SASSMMS.Domain.Entities;
+using SSWebUI.Models;
 
 namespace SSWebUI.Controllers
 {
     public class ParentController : Controller
     {
+        private readonly IParentService parentService;
+
+        public ParentController()
+        {
+            parentService=new ParentService();
+        }
         // GET: Parent
+
+        private List<ParentModel> GetParentModels(List<Parent> lstParents)
+        {
+            var lstParentModels=new List<ParentModel>();
+            foreach (var item in lstParents)
+            {
+                var parentModel = new ParentModel
+                {
+                    ParentId = item.ParentId,
+                  
+                    FirstName = item.FirstName,
+                    FatherName = item.FatherName,
+                    GrandfatherName = item.GrandfatherName,
+                    Gender = item.Gender,
+                    Occupation = item.Occupation,
+                    DateOfBirth = item.DateOfBirth
+                };
+                lstParentModels.Add(parentModel);
+
+
+
+            }
+            return lstParentModels;
+        }
+
+        
+
         public ActionResult Index()
         {
-            return View();
+            var parents = parentService.GetParents();
+
+
+            return View(GetParentModels(parents));
         }
 
         // GET: Parent/Details/5
@@ -24,11 +65,23 @@ namespace SSWebUI.Controllers
 
         // POST: Parent/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "FirstName,FatherName,GrandFatherName,Occupation,DateOfBirth,Gender")] Parent collection)
         {
             try
             {
-                // TODO: Add insert logic here
+                var parent = new Parent
+                {
+                    ParentId = Guid.NewGuid(),
+                    FirstName = collection.FirstName,
+                    FatherName = collection.FatherName,
+                    GrandfatherName = collection.GrandfatherName,
+                    Gender = collection.Gender,
+                    Occupation = collection.Occupation,
+                    DateOfBirth = collection.DateOfBirth
+                };
+                parentService.InsertParent(parent);
+               
 
                 return RedirectToAction("Index");
             }

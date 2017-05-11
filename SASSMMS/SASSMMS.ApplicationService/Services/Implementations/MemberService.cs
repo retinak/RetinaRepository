@@ -16,13 +16,13 @@ namespace SASSMMS.ApplicationService.Services.Implementations
         {
             unitOfWork=new UnitOfWork();
         }
-        public List<Region> FindBy(Expression<Func<Region, bool>> predicate)
+        public List<Member> FindBy(Expression<Func<Member, bool>> predicate)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Region> Get(Expression<Func<Region, bool>> filter = null, 
-            Func<IQueryable<Region>, IOrderedQueryable<Region>> orderBy = null, string includeProperties = "")
+        public IEnumerable<Member> Get(Expression<Func<Member, bool>> filter = null, 
+            Func<IQueryable<Member>, IOrderedQueryable<Member>> orderBy = null, string includeProperties = "")
         {
             throw new NotImplementedException();
         }
@@ -32,15 +32,9 @@ namespace SASSMMS.ApplicationService.Services.Implementations
             return unitOfWork.MemberRepository.GetById(id);
         }
 
-        public IEnumerable<Member> Get(Expression<Func<Member, bool>> filter = null, Func<IQueryable<Member>, IOrderedQueryable<Member>> orderBy = null, string includeProperties = "")
-        {
-            throw new NotImplementedException();
-        }
+      
 
-        public List<Member> FindBy(Expression<Func<Member, bool>> predicate)
-        {
-            throw  new NotImplementedException();
-        }
+        
 
         public bool DeleteMember(Member member)
         {

@@ -45,6 +45,7 @@
     <Compile Include="Services\Implementations\DivisionService.cs" />
     <Compile Include="Services\Implementations\MemberService.cs" />
     <Compile Include="Services\Implementations\OccupationService.cs" />
+    <Compile Include="Services\Implementations\ParentService.cs" />
     <Compile Include="Services\Implementations\PositionService.cs" />
     <Compile Include="Services\Implementations\QualificationService.cs" />
     <Compile Include="Services\Implementations\RegionService.cs" />
@@ -56,6 +57,7 @@
     <Compile Include="Services\Interfaces\IDivisionService.cs" />
     <Compile Include="Services\Interfaces\IMemberService.cs" />
     <Compile Include="Services\Interfaces\IOccupationService.cs" />
+    <Compile Include="Services\Interfaces\IParentService.cs" />
     <Compile Include="Services\Interfaces\IPositionService.cs" />
     <Compile Include="Services\Interfaces\IQualificationService.cs" />
     <Compile Include="Services\Interfaces\ISchoolService.cs" />
@@ -63,6 +65,7 @@
     <Compile Include="Services\Interfaces\ISubcityService.cs" />
     <Compile Include="Services\Interfaces\IRegionService.cs" />
     <Compile Include="Services\Interfaces\IWoredaService.cs" />
+    <Compile Include="Services\Interfaces\ParentService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SASSMMS.Domain\SASSMMS.Domain.csproj">

@@ -6,7 +6,7 @@ namespace SASSMMS.Domain.Entities
     public class Parent : Person
     {
         public Guid ParentId { get; set; }
-        public string ParentCode { get; set; }
+       
         public override string FirstName { get; set; }
        
         public override string FatherName { get; set; }

@@ -1,8 +1,6 @@
 ﻿@using Kendo.Mvc.UI
 @model SSWebUI.Models.MemberModel
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
+
 
     <div class="row">
         <div class="form-horizontal">
@@ -39,7 +37,7 @@
                         <div class="form-group">
                             <label class="control-label col-md-4">Qualification </label>
                             <div class="col-md-8">
-                                @(Html.Kendo().DropDownList()
+                                @(Html.Kendo().DropDownListFor(t=>t.QualificationId)
                               .Name("Qualification")
                               .DataTextField("Text")
                               .DataValueField("Value")
@@ -55,9 +53,9 @@
                              
                               .HtmlAttributes(new { style = "width: 100%", @required = "required" }))
 
-                                @*@Html.DropDownList("DivisionId", null, htmlAttributes: new { @class = "form-control" })*@
+                            
 
-                                @Html.ValidationMessageFor(model => model.DivisionId, "", new { @class = "text-danger" })
+                                @Html.ValidationMessageFor(model => model.QualificationId, "", new { @class = "text-danger" })
                             </div>
                         </div>
 
@@ -117,7 +115,7 @@
 
 
                     <div class="box box-body">
-                        @Html.AntiForgeryToken()
+                       
                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                         <div class="form-group">
                             <label class="control-label col-md-4">Status</label>
@@ -272,4 +270,4 @@
             }
         </script>*@
 
-}
+

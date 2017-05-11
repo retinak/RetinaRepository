@@ -22,3 +22,16 @@ E:\MyRepo\SASSMMS\SASSMMS.Domain\bin\Debug\Microsoft.AspNet.Identity.EntityFrame
 E:\MyRepo\SASSMMS\SASSMMS.Domain\obj\Debug\SASSMMS.Domain.dll
 E:\MyRepo\SASSMMS\SASSMMS.Domain\obj\Debug\SASSMMS.Domain.pdb
 E:\MyRepo\SASSMMS\SASSMMS.Domain\obj\Debug\SASSMMS.Domain.csprojResolveAssemblyReference.cache
+E:\MyRepo\RetinaRepository\SASSMMS\SASSMMS.Domain\bin\Debug\SASSMMS.Domain.dll.config
+E:\MyRepo\RetinaRepository\SASSMMS\SASSMMS.Domain\bin\Debug\SASSMMS.Domain.dll
+E:\MyRepo\RetinaRepository\SASSMMS\SASSMMS.Domain\bin\Debug\SASSMMS.Domain.pdb
+E:\MyRepo\RetinaRepository\SASSMMS\SASSMMS.Domain\bin\Debug\EntityFramework.dll
+E:\MyRepo\RetinaRepository\SASSMMS\SASSMMS.Domain\bin\Debug\EntityFramework.SqlServer.dll
+E:\MyRepo\RetinaRepository\SASSMMS\SASSMMS.Domain\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+E:\MyRepo\RetinaRepository\SASSMMS\SASSMMS.Domain\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\MyRepo\RetinaRepository\SASSMMS\SASSMMS.Domain\bin\Debug\EntityFramework.xml
+E:\MyRepo\RetinaRepository\SASSMMS\SASSMMS.Domain\bin\Debug\EntityFramework.SqlServer.xml
+E:\MyRepo\RetinaRepository\SASSMMS\SASSMMS.Domain\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+E:\MyRepo\RetinaRepository\SASSMMS\SASSMMS.Domain\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\MyRepo\RetinaRepository\SASSMMS\SASSMMS.Domain\obj\Debug\SASSMMS.Domain.dll
+E:\MyRepo\RetinaRepository\SASSMMS\SASSMMS.Domain\obj\Debug\SASSMMS.Domain.pdb

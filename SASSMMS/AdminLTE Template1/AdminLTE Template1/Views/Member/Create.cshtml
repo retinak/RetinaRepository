@@ -3,31 +3,42 @@
 @{
     ViewBag.Title = "Member Profile";
 }
-
-
-    <div role="tabpanel">
-        <ul class="nav nav-tabs" role="tablist" id="myTab">
-            <li role="presentation" class="active"><a href="#general" controls="Member" role="tab" data-toggle="tab">Basic Info</a></li>
-            <li role="presentation"><a href="#adtionalInfo" controls="Member" role="tab" data-toggle="tab">Additionals</a></li>
-            <li role="presentation"><a href="#address" controls="Member" role="tab" data-toggle="tab">Address</a></li>
-
-        </ul>
-        @*@Html.AntiForgeryToken()*@
 @using (Html.BeginForm("Create", "Member", FormMethod.Post, new { role = "form" }))
 {
-    <div class="tab-content">
-        <div role="tabpanel" class="tab-pane fade in active" id="general">@Html.Partial("Shared/_BasicInfoView", Model)</div>
-        <div role="tabpanel" class="tab-pane fade" id="adtionalInfo">@Html.Partial("Shared/_AdditionalInfo", Model)</div>
-        <div role="tabpanel" class="tab-pane fade" id="address">@Html.Partial("Shared/_AddressView", Model)</div>
+<div class="col-md-12">
+    <div class="container pull-md">
+        @Html.AntiForgeryToken()
+        <div role="tabpanel">
+            <ul class="nav nav-tabs" role="tablist" id="myTab">
+                <li role="presentation" class="active"><a href="#general" controls="Member" role="tab" data-toggle="tab">Basic Info</a></li>
+                <li role="presentation"><a href="#adtionalInfo" controls="Member" role="tab" data-toggle="tab">Additionals</a></li>
+                <li role="presentation"><a href="#address" controls="Member" role="tab" data-toggle="tab">Address</a></li>
+
+            </ul>
+
+           
+                @*@Html.ValidationSummary()*@
+             
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade in active" id="general">@Html.Partial("Shared/_BasicInfoView", Model)</div>
+                    <div role="tabpanel" class="tab-pane fade" id="adtionalInfo">@Html.Partial("Shared/_AdditionalInfo", Model)</div>
+                    <div role="tabpanel" class="tab-pane fade" id="address">@Html.Partial("Shared/_AddressView", Model)</div>
+
+                </div>
+              
+                @*<a href="@Url.Action("Index")" class="btn btn-default"><i class="glyphicon glyphicon-list"></i> Back to List</a>
+            <a href="javascript: location.reload(true);" class="btn btn-default"><i class="glyphicon glyphicon-trash"></i> Clear</a>*@
+            
+            <button type="submit" class="btn btn-success margin-btn-sm"><i class="glyphicon glyphicon-ok-circle"></i> Save</button>
 
 
+            @*@Html.AntiForgeryToken()*@
+      @*<a href="@Url.Action("Index")" class="btn btn-default"><i class="glyphicon glyphicon-list"></i> Back to List</a>
+                <a href="javascript: location.reload(true);" class="btn btn-default"><i class="glyphicon glyphicon-trash"></i> Clear</a>*@
+        </div>
+
+
+        </div>
     </div>
 }
-        @*<a href="@Url.Action("Index")" class="btn btn-default"><i class="glyphicon glyphicon-list"></i> Back to List</a>
-        <a href="javascript: location.reload(true);" class="btn btn-default"><i class="glyphicon glyphicon-trash"></i> Clear</a>*@
-    </div>
-   
-
-
-
 

@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Mime;
 using System.Web.Mvc;
-using Kendo.Mvc.UI;
 using SASSMMS.ApplicationService.Services.Implementations;
 using SASSMMS.ApplicationService.Services.Interfaces;
 using SASSMMS.Domain.Entities;
@@ -81,11 +79,7 @@ namespace SSWebUI.Controllers
             return View();
         }
 
-        // GET: Member/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
+       
         //public ActionResult OtherInfo()
         //{
         //    return View();
@@ -94,13 +88,16 @@ namespace SSWebUI.Controllers
         public JsonResult GetSchools()
         {
             var schools = schoolService.GetSchools();
-            return Json(schools.Select(t => new { Text = t.SchoolName, Value = t.SchoolId }), JsonRequestBehavior.AllowGet);
+            return Json(schools.Select(t => new
+            { Text = t.SchoolName, Value = t.SchoolId }), 
+            JsonRequestBehavior.AllowGet);
         }
 
         public JsonResult GetOccupations()
         {
             var occupations = occupationService.GetOccupations();
-            return Json(occupations.Select(n => new { OccupationName = n.OccupationName, OccupationId = n.OccupationId}),
+            return Json(occupations.Select(n => new
+            { OccupationName = n.OccupationName, OccupationId = n.OccupationId}),
                 JsonRequestBehavior.AllowGet);
         }
 
@@ -112,26 +109,32 @@ namespace SSWebUI.Controllers
             {
                 woredas = woredas.Where(n => n.SubcityId == id);
             }
-            return Json(woredas.Select(n => new {Text = n.WoredaName, Value = n.WoredaId}),
+            return Json(woredas.Select(n => new
+            { Text = n.WoredaName, Value = n.WoredaId}),
                 JsonRequestBehavior.AllowGet);
         }
         public JsonResult GetCategories()
         {
             var categories = categoryService.GetCategories();
-            return Json(categories.Select(t => new { Text = t.CategoryName, Value = t.CategoryId }), JsonRequestBehavior.AllowGet);
+            return Json(categories.Select(t => new
+            { Text = t.CategoryName, Value = t.CategoryId }), 
+            JsonRequestBehavior.AllowGet);
         }
 
         public JsonResult GetQualifications()
         {
             var qualifications = qualificationService.GetQualifications();
-            return Json(qualifications.Select(q => new {Text = q.QualificationName, Value = q.QualificationId}),
+            return Json(qualifications.Select(q => new
+            { Text = q.QualificationName, Value = q.QualificationId}),
                 JsonRequestBehavior.AllowGet);
         }
 
         public JsonResult GetRegions()
         {
             var regions = regionService.GetAll();
-            return Json(regions.Select(t => new {t.RegionName, t.RegionId}), JsonRequestBehavior.AllowGet);
+            return Json(regions.Select(t => new
+            { t.RegionName, t.RegionId}), 
+            JsonRequestBehavior.AllowGet);
         }
 
         public JsonResult GetSubcities(Guid? id)
@@ -142,17 +145,11 @@ namespace SSWebUI.Controllers
                 subcities = subcities.Where(s => s.RegionId==id).ToList();
             }
             
-            return Json(subcities.Select(t => new {t.SubcityId, t.SubcityName}), JsonRequestBehavior.AllowGet);
+            return Json(subcities.Select(t => new
+            { t.SubcityId, t.SubcityName}),
+            JsonRequestBehavior.AllowGet);
 
-            //var northwind = new SampleEntities();
-            //var products = northwind.Products.AsQueryable();
-
-            //if (categories != null)
-            //{
-            //    products = products.Where(p => p.CategoryID == categories);
-            //}
-
-            //return Json(products.Select(p => new { ProductID = p.ProductID, ProductName = p.ProductName }), JsonRequestBehavior.AllowGet);
+          
         }
         public JsonResult GetStatuses()
         {
@@ -168,14 +165,16 @@ namespace SSWebUI.Controllers
         public JsonResult GetPositions()
         {
             var positions = positionService.GetPositions();
-            return Json(positions.Select(q => new { Text = q.PositionName, Value = q.PositionId }),
+            return Json(positions.Select(q => new
+            { Text = q.PositionName, Value = q.PositionId }),
                 JsonRequestBehavior.AllowGet);
         }
 
         public JsonResult GetDivisions()
         {
             var divisions = divisionService.GetDivisions();
-            return Json(divisions.Select(d => new {Text = d.DepartmentName, Value = d.DivisionId}),
+            return Json(divisions.Select(d => new
+            { Text = d.DepartmentName, Value = d.DivisionId}),
                 JsonRequestBehavior.AllowGet);
         }
         public Address GetAddress(MemberModel memberModel)
@@ -200,11 +199,16 @@ namespace SSWebUI.Controllers
 
         }
 
-       
 
-       
+        // GET: Member/Create
+        public ActionResult Create()
+        {
+            return View();
+        }
+
         // POST: Member/Create.
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(MemberModel memberModel)
         {
             try

@@ -20,6 +20,19 @@ namespace SASSMMS.Repository
         private GenericRepository<Position> positionRepository;
         private GenericRepository<Status> statusRepository;
         private GenericRepository<Occupation> occupationRepository;
+        private GenericRepository<Parent> parentRepository;
+
+        public GenericRepository<Parent> ParentRepository
+        {
+            get
+            {
+                if(parentRepository == null)
+                {
+                    parentRepository = new GenericRepository<Parent>(mainContext);
+                }
+                return parentRepository;
+            }
+        }
         
          
 

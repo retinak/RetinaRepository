@@ -1,8 +1,7 @@
 ﻿@model SSWebUI.Models.MemberModel
 @using Kendo.Mvc.UI
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
+
+   
     <div class="row">
         <div class="form-horizontal">
             <div class="col-xs-12 col-md-5">
@@ -62,9 +61,11 @@
                             <input type="submit" value="Create" class="btn btn-default btn btn-primary" />
                         </div>
 
-               
+                                   <button type="submit" class="btn btn-success margin-btn-sm"><i class="glyphicon glyphicon-ok-circle"></i> Save</button>
+
                     </div>*@
-                    <button type="submit" class="btn btn-success margin-btn-sm"><i class="glyphicon glyphicon-ok-circle"></i> Save</button>
+                  
+                   
 
                 </div>
             </div>
@@ -72,4 +73,3 @@
 
     </div>
 
-}
